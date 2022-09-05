@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/black_rounded_button.xml" value="0.212" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/ic_add_alarm.xml" value="0.345" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/input_background.xml" value="0.212" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/round.xml" value="0.2275" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/white_grey_border_bottom.xml" value="0.1765" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/white_grey_border_top.xml" value="0.1765" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_feed.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_main.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_view_post.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/item_category.xml" value="0.6" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_bottom_navigation_view.xml" value="0.4" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_card_notice.xml" value="0.4" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_category.xml" value="0.17553191489361702" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_center_viewpager.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_top_tabs.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_view_post.xml" value="0.264" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_post_toolbar.xml" value="0.3609375" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.40657439446366783" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2453125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:id="@+id/relLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="반가워요"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:text="포텐"
+            android:textColor="#F32323"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_toRightOf="@id/text2"
+            android:text=" 터질 준비 됐나요?"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relLayout2"
+        android:layout_below="@id/relLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
+        <EditText
+            android:id="@+id/input_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="textEmailAddress"
+            android:hint="아이디 입력"
+            android:background="@drawable/input_background"/>
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_id"
+            android:inputType="textEmailAddress"
+            android:hint="비밀번호 입력"
+            android:background="@drawable/input_background"/>
+
+        <CheckBox
+            android:id="@+id/autoLoginCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동 로그인"
+            android:layout_below="@id/input_password"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_below="@id/autoLoginCheckBox"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            android:background="@drawable/black_rounded_button"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_login"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tv_find_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디 찾기"
+                android:textColor="#525252"/>
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="|"
+                android:layout_marginHorizontal="20dp"
+                android:layout_toRightOf="@id/tv_find_id"/>
+            <TextView
+                android:id="@+id/tv_find_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 찾기"
+                android:textColor="#525252"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@id/tv_"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/simple_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30초 회원가입"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
