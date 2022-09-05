@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/relLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_launcher_background"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="0.5dp" />
+
+            <RelativeLayout
+                android:id="@+id/relLayout2_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_photo">
+
+                <TextView
+                    android:id="@+id/clubname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한사랑클라이밍회"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/regionname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clubname"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/round"
+                    android:backgroundTint="@color/grey"
+                    android:paddingHorizontal="8dp"
+                    android:text="서울"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/onoffname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clubname"
+                    android:layout_margin="2dp"
+                    android:layout_toRightOf="@id/regionname"
+                    android:background="@drawable/round"
+                    android:backgroundTint="#6CEAFB"
+                    android:paddingHorizontal="8dp"
+                    android:text="오프라인"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/ddayname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clubname"
+                    android:layout_margin="2dp"
+                    android:layout_toRightOf="@id/onoffname"
+                    android:background="@drawable/round"
+                    android:backgroundTint="@color/black"
+                    android:paddingHorizontal="8dp"
+                    android:text="D-20"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_baseline_share_24" />
+        </RelativeLayout>
+
+        <com.example.poten.Utils.SquareImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relLayout1"
+            android:layout_marginHorizontal="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <RelativeLayout
+            android:id="@+id/relLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_image"
+            android:background="@color/white"
+            android:padding="20dp">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한사랑 클라이밍회 부원 모집합니다."
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginTop="10dp"
+                android:text="대한민국 청소년 클라이밍 동아리 [한사랑 클라이밍회]에서 2기 부원을 모집합니다."
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
