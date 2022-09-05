@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_feeds"
+        android:icon="@drawable/ic_add_alarm"
+        android:title="">
+    </item>
+    <item
+        android:id="@+id/ic_notice"
+        android:icon="@drawable/ic_add_alarm"
+        android:title="">
+    </item>
+    <item
+        android:id="@+id/ic_search"
+        android:icon="@drawable/ic_add_alarm"
+        android:title="">
+    </item>
+    <item
+        android:id="@+id/ic_mypage"
+        android:icon="@drawable/ic_add_alarm"
+        android:title="">
+    </item>
+
+
+
+</menu>
