@@ -4,7 +4,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
         android:layout_alignParentBottom="true">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,8 +12,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/white_grey_border_top"
-            app:labelVisibilityMode="unlabeled"
-            app:menu="@menu/bottom_navigation_menu"/>
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu" />
 
     </RelativeLayout>
 
