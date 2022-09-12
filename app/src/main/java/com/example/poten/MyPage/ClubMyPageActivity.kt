@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +19,6 @@ import com.example.poten.Utils.MemberListAdapter
 import com.example.poten.Utils.PagerFragmentStateAdapter
 import com.example.poten.Utils.SecondFragment.SecondFragment
 import com.example.poten.databinding.ActivityClubMyPageBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ClubMyPageActivity : AppCompatActivity() {

@@ -64,12 +64,12 @@
 
             <ImageView
                 android:id="@+id/ivEllipses"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/ic_horiz" />
+                android:src="@drawable/ic_verticle_three_dots" />
         </RelativeLayout>
 
         <com.example.poten.Utils.SquareImageView
@@ -95,15 +95,6 @@
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/image_comments_link"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/image_caption"
-                android:layout_marginTop="15dp"
-                android:text="View all 3 comments"
-                android:textColor="@color/grey"
-                android:textSize="18sp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -125,7 +116,7 @@
                     android:layout_height="35dp"
                     android:layout_centerInParent="true"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_heart_red"
+                    android:src="@drawable/ic_feed"
                     android:visibility="invisible" />
 
                 <ImageView
@@ -134,7 +125,8 @@
                     android:layout_height="35dp"
                     android:layout_centerInParent="true"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ic_heart_white"
+                    android:src="@drawable/ic_feed"
+                    app:tint="#DFDFDF"
                     android:visibility="visible" />
             </RelativeLayout>
 
@@ -152,9 +144,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="16dp"
                 android:layout_toRightOf="@+id/heart_count"
-                android:src="@drawable/ic_speech_bubble"
+                android:src="@drawable/ic_comment"
                 android:visibility="visible" />
 
             <TextView
