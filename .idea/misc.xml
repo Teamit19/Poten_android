@@ -39,6 +39,26 @@
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2125" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.2125" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/input_background.xml" value="0.3675" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/round.xml" value="0.3675" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_login_area.xml" value="0.27421875" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_login_info.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/fragment_view_notice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/fragment_view_post.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/item_area.xml" value="0.365625" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_bottom_navigation_view.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_card_notice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_center_view_notice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_center_viewpager.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_club_listitem.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/snippet_top_notice.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/snippet_top_view_profile.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
