@@ -23,7 +23,7 @@ class SelectAreaActivity : AppCompatActivity() {
     private fun initRecycler() {
         var areaAdapter = AreaAdapter(this)
         areaAdapter.datas=datas
-        binding.recyclerView.addItemDecoration(RecyclerViewDecoration())
+        binding.recyclerView.addItemDecoration(RecyclerViewDecoration(3))
         binding.recyclerView.adapter = areaAdapter
         binding.recyclerView.layoutManager= GridLayoutManager(applicationContext, 3)
 
