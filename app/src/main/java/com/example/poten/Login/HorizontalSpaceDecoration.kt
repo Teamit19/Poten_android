@@ -5,10 +5,16 @@ import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewDecoration() : RecyclerView.ItemDecoration() {
+class RecyclerViewDecoration(var count:Int) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-        outRect.top=0
+        outRect.bottom=20
+        outRect.left=-30
+        outRect.right=-15
+
+        if (parent.getChildLayoutPosition(view) %count==0) {
+            outRect.left = 0;
+        }
 
     }
 
