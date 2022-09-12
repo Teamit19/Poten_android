@@ -4,34 +4,44 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/black_rounded_button.xml" value="0.212" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/gradient_cover.xml" value="0.192" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/ic_add_alarm.xml" value="0.345" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/ic_search.xml" value="0.192" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/input_background.xml" value="0.212" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/round.xml" value="0.2275" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/round_button1.xml" value="0.2705" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/setting_background.xml" value="0.362" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/white_grey_border_bottom.xml" value="0.1765" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/white_grey_border_top.xml" value="0.1765" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/font/font_custom.xml" value="0.39114583333333336" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_club_my_page.xml" value="0.2" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_feed.xml" value="0.13768115942028986" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_home.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/activity_notice.xml" value="0.3611111111111111" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_edit_profile.xml" value="0.30434782608695654" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_first.xml" value="0.2203125" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_second.xml" value="0.2203125" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_view_notice.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/fragment_view_post.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/item_category.xml" value="0.6" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/item_memberlist.xml" value="0.264" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_bottom_navigation_view.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_card_notice.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_category.xml" value="0.17553191489361702" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_center_view_notice.xml" value="0.3128205128205128" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_center_viewpager.xml" value="0.13768115942028986" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_club_listitem.xml" value="0.30434782608695654" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_clubprofile.xml" value="0.2687224669603524" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_mypage_setting.xml" value="0.4" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_top_tabs.xml" value="0.13768115942028986" />
-        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_view_post.xml" value="0.4" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/layout_view_post.xml" value="0.2" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_center_edit_profile.xml" value="0.30434782608695654" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_edit_profile.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_mypage_setting.xml" value="0.3609375" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_post_toolbar.xml" value="0.3609375" />
+        <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_top_clubprofile.xml" value="0.2" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.40657439446366783" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_top_notice.xml" value="0.17553191489361702" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/layout/snippet_top_view_profile.xml" value="0.30434782608695654" />

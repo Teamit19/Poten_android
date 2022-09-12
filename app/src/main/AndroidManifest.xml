@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POTEN">
         <activity
+            android:name=".MyPage.ClubMyPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Notice.NoticeActivity"
             android:exported="false" />
         <activity

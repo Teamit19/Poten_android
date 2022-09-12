@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.poten.Home.HomeActivity
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.Notice.NoticeActivity
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         button1.setOnClickListener(View.OnClickListener {
-            val intent1 = Intent(this, NoticeActivity::class.java) //ACTIVITY_NUM = 0
+            val intent1 = Intent(this, ClubMyPageActivity::class.java) //ACTIVITY_NUM = 0
 
             startActivity(intent1)
         })
