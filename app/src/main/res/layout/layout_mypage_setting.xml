@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/snippet_mypage_setting" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel_layout_1"
+        android:padding="20dp"
+        android:id="@+id/rel_layout_2">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일반"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tv_loginInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv1"
+            android:paddingVertical="20dp"
+            android:text="로그인 정보"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+        <TextView
+            android:id="@+id/tv_setAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_loginInfo"
+            android:paddingVertical="20dp"
+            android:text="알림 설정"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+        <TextView
+            android:id="@+id/tv_requestClub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_setAlarm"
+            android:paddingVertical="20dp"
+            android:text="동아리 게시 요청"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+        <TextView
+            android:id="@+id/tv_likeFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_requestClub"
+            android:paddingVertical="20dp"
+            android:text="좋아요한 게시물"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_likeFeed"
+            android:layout_marginTop="25dp"
+            android:text="정보"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tv_TOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2"
+            android:paddingVertical="20dp"
+            android:text="이용약관"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+        <TextView
+            android:id="@+id/tv_privacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_TOS"
+            android:paddingVertical="20dp"
+            android:text="개인정보처리방침"
+            android:textColor="@color/black"
+            android:background="@drawable/setting_background"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
