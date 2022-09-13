@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <!--
+        <variable
+            name="item"
+            type="com.example.poten.Model.secondItem" />
+            -->
+    </data>
+<androidx.cardview.widget.CardView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/relLayout"
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="@drawable/round_nostroke">
+
+            <RelativeLayout
+                android:id="@+id/rlmain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/activity_pic1"
+                android:gravity="bottom">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="bottom"
+                    android:background="@drawable/round_bottom">
+
+                    <RelativeLayout
+                        android:id="@+id/heartLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp">
+
+                        <ImageView
+                            android:id="@+id/image_heart"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="12dp"
+                            android:src="@drawable/ic_feed"
+                            android:visibility="visible"
+                            app:tint="#DFDFDF" />
+                    </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/heart_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/heartLayout"
+                            android:text="411"
+                            android:textColor="@color/white"
+                            android:textSize="9sp" />
+
+                        <ImageView
+                            android:id="@+id/speech_bubble"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_toRightOf="@+id/heart_count"
+                            android:src="@drawable/ic_comment"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/speech_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="411"
+                            android:textColor="@color/white"
+                            android:textSize="9sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_toRightOf="@id/speech_bubble"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relLayout">
+
+            <TextView
+                android:id="@+id/usernmae"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="xx_07_hwi"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:fontFamily="@font/inter_medium"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/usernmae"
+                android:layout_marginTop="8dp"
+                android:text="쿠킹틴즈 최고!!\n2조 친구들이랑 모여서 서브 샌드위치를 먹었다."
+                android:textSize="11sp"
+                android:textColor="@color/black"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>
