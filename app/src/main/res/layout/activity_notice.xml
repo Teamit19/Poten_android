@@ -55,8 +55,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="마감임박"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="20sp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleView_Deadline"
                 android:layout_width="match_parent"
