@@ -44,10 +44,28 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp" />
+                android:layout_marginEnd="-1dp"
+                android:layout_marginBottom="0dp"
+                android:background="#EEEEEE" />
 
             <include layout="@layout/layout_center_viewpager" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="27dp"
+                android:layout_marginBottom="76dp"
+                android:backgroundTint="@color/white"
+                android:clickable="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_pencil"
+                app:backgroundTint="#FFFFFF"
+                app:fabSize="auto"
+                app:maxImageSize="20dp"
+                app:tint="#F32323" />
 
 
         </RelativeLayout>
