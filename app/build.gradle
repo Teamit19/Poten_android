@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 android {
     compileSdk 32
@@ -13,7 +15,15 @@ android {
         versionCode 1
         versionName "1.0"
 
+        manifestPlaceholders["KAKAO_API_KEY"] = properties['kakao_api_key']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // api key 변수 지정
+        buildConfigField "String", "KAKAO_API_KEY", properties['kakao_api_key']
+        buildConfigField "String", "BASE_URL", properties['base_url']
+
+
     }
 
     dataBinding {
@@ -27,6 +37,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", properties['base_url']
+
         }
     }
     compileOptions {
@@ -40,8 +52,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation 'com.github.bumptech.glide:glide:4.12.0' // 이미지로딩 라이브러리
+    implementation "com.kakao.sdk:v2-user:2.11.0"
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit-converters:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'

@@ -1,19 +1,22 @@
-package com.example.poten.Home
+package com.example.poten.Board
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.poten.Board.model.BoardResponse
 import com.example.poten.R
 import com.example.poten.Utils.SquareImageView
 import de.hdodenhof.circleimageview.CircleImageView
 
 class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <PostListViewAdapter.CustomViewHolder>() {
-    private var postList =  mutableListOf<Post>()
+    private var postList =  mutableListOf<BoardResponse>()
 
-    fun setListData(data:MutableList<Post>){
+    fun setListData(data:MutableList<BoardResponse>){
         postList = data
     }
 
@@ -23,18 +26,24 @@ class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <
     }
 
     override fun onBindViewHolder(holder: PostListViewAdapter.CustomViewHolder, position: Int) {
-//        TODO("아이템과 백엔드 데이터 연결")
-        holder.clubname.text="cookingTeens"
-        holder.username.text="test"
-        holder.image_time_posted.text="1분전"
+        // 데이터 연결
+        holder.clubname.text = postList[position].club?.clubName
+        holder.username.text= postList[position].writer?.name
+        holder.image_time_posted.text = "1분전"
 
-        holder.heart_count.text = "1"
-        holder.speech_count.text = "5"
-        holder.image_caption.text = "쿠킹틴즈 입니다~!~!"
+        holder.heart_count.text = postList[position].hearts?.size.toString()
+        holder.speech_count.text = postList[position].comment?.size.toString()
+        holder.image_caption.text = postList[position].content.toString()
 
+
+        // 하트 연결
+        holder.image_heart.setOnClickListener(
+            onHeartClicked()
+        )
     }
 
     override fun getItemCount(): Int {
+//        Log.i("BOARD", "getItemCount" + postList.size)
         return postList.size
     }
 
@@ -49,6 +58,9 @@ class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <
         val heart_count = itemView.findViewById<TextView>(R.id.heart_count)
         val speech_count = itemView.findViewById<TextView>(R.id.speech_count)
         val image_caption = itemView.findViewById<TextView>(R.id.image_caption)
+
+        val image_heart = itemView.findViewById<ImageView>(R.id.image_heart)
+        val speech_bubble = itemView.findViewById<ImageView>(R.id.speech_bubble)
     }
 
 
