@@ -2,8 +2,10 @@ package com.example.poten.interfaces
 
 import retrofit2.Call
 import com.example.poten.Board.model.BoardResponse
+import com.example.poten.Board.model.BoardResponseList
 import com.example.poten.dto.BoardForm
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface BoardApi {
@@ -11,9 +13,9 @@ interface BoardApi {
     @POST("boards/upload")
     fun saveBoard(@Body boardForm: BoardForm): Call<BoardResponse>
 
-//    // 조회
-//    @GET("boards/all")
-//    fun getBoardAll(): Call<BoardResponseList>
+    // 조회
+    @GET("boards/all")
+    fun getBoardAll(): Call<BoardResponseList>
 //
 //    @GET("boards/{boardId}")
 //    fun getBoard(): Call<Test>

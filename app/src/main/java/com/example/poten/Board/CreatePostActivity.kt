@@ -20,8 +20,7 @@ class CreatePostActivity : AppCompatActivity() {
     private lateinit var et_postContent : EditText
     private lateinit var et_postClubName : EditText
     private lateinit var btn_postSubmit : Button
-
-    var retrofit = RetrofitClient.create(BoardApi::class.java)
+//    private lateinit var  retrofit :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +29,7 @@ class CreatePostActivity : AppCompatActivity() {
         et_postContent = findViewById(R.id.et_postClubName)
         et_postClubName = findViewById(R.id.et_postClubName)
         btn_postSubmit = findViewById(R.id.btn_postSubmit)
+
 
         btn_postSubmit.setOnClickListener {
             Log.i("BOARD", "버튼 눌림")
@@ -42,6 +42,8 @@ class CreatePostActivity : AppCompatActivity() {
     }
 
     private fun saveBoard(request: BoardForm) {
+        var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
+
         retrofit.saveBoard(request).enqueue(object : Callback<BoardResponse> {
             override fun onResponse(call: Call<BoardResponse>, response: Response<BoardResponse>) {
                 Log.i("BOARD", "save board 성공"+ response.body().toString())
