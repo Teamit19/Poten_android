@@ -7,9 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.poten.Home.HomeActivity
+import com.example.poten.Board.HomeActivity
 import com.example.poten.MyPage.ClubMyPageActivity
-import com.example.poten.Notice.NoticeActivity
 import com.example.poten.dto.Test
 import com.example.poten.interfaces.RetrofitService
 import retrofit2.Call

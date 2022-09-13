@@ -1,4 +1,4 @@
-package com.example.poten.Home
+package com.example.poten.Board
 
 import android.content.Context
 import android.content.Intent
@@ -7,16 +7,16 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.poten.Feed.UploadFeedActivity
 import com.example.poten.R
 import com.example.poten.Utils.BottomNavigationViewHelper
+import com.example.poten.Utils.RetrofitClient
+import com.example.poten.interfaces.BoardApi
+import com.example.poten.interfaces.UserApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.kakao.sdk.common.util.Utility
 
 class HomeActivity : AppCompatActivity() {
     private val TAG = "HomeActivity"
@@ -32,9 +32,14 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var adapter: PostListViewAdapter
 
+    var retrofit = RetrofitClient.create(BoardApi::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        val keyHash = Utility.getKeyHash(this)
+        Log.d("Hash", keyHash)
 
         mFrameLayout = findViewById<View>(R.id.container) as FrameLayout
         mRelativeLayout = findViewById<View>(R.id.relLayoutParent) as RelativeLayout
@@ -52,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
 
         // 피드 작성 _ 플로팅 버튼 연결
         floatBtn.setOnClickListener{
-            val intent = Intent(this, UploadFeedActivity::class.java)
+            val intent = Intent(this, CreatePostActivity::class.java)
             startActivity(intent)
         }
 
@@ -64,6 +69,10 @@ class HomeActivity : AppCompatActivity() {
         rv_postList.layoutManager = manager
         rv_postList.setHasFixedSize(true)
         rv_postList.adapter = adapter
+
+//        // 피드 데이터 불러오기
+//        retrofit.saveBoard()
+
 
         // 피드 데이터 불러오기 - 하드코딩
         var postList =  mutableListOf<Post>()
