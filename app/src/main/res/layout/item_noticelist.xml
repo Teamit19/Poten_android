@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_launcher_background"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="0.5dp" />
+
+            <RelativeLayout
+                android:id="@+id/rel_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toLeftOf="@id/post_image"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="#경기도 #온라인"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_layout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tag">
+                    <TextView
+                        android:id="@+id/clubname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/dday"
+                        android:text="한사랑 클라이밍회"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_bold"/>
+
+                    <TextView
+                        android:id="@+id/dday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/round"
+                        android:backgroundTint="#F3F3F3"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="4dp"
+                        android:text="D-1"
+                        android:textColor="#1E1E1E"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rel_layout2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="한사랑 클라이밍회 부원 모집합니다.가나다라마바사"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+
+
+            </RelativeLayout>
+            <com.example.poten.Utils.SquareImageView
+                android:id="@+id/post_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background" />
+        </RelativeLayout>
+    </RelativeLayout>
