@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var retrofit = Retrofit.Builder().baseUrl("http://192.168.35.193:8080/").addConverterFactory(GsonConverterFactory.create()).build();
+        var retrofit = Retrofit.Builder().baseUrl("http://192.168.0.7:8080/").addConverterFactory(GsonConverterFactory.create()).build();
         val service = retrofit.create(RetrofitService::class.java);
 
         button0 = findViewById(R.id.button)

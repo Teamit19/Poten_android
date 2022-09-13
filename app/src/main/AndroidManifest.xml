@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.poten">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
+        android:name=".GlobalApplication"
         android:theme="@style/Theme.POTEN">
-        <activity
-            android:name=".Feed.UploadFeedActivity"
-            android:exported="false" />
         <activity
             android:name=".MyPage.ClubMyPageActivity"
             android:exported="false" />
@@ -20,25 +21,31 @@
             android:exported="false" />
         <activity
             android:name=".Login.LoginActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <data android:host="oauth/kakao"
+                    android:scheme="kakao${KAKAO_API_KEY}" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".Login.SelectAreaActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Login.SelectKeywordActivity"
-            android:exported="true"></activity>
+            android:name=".Home.HomeActivity"
+            android:exported="true" >
+        </activity>
+        <activity android:name=".Login.SelectAreaActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".Login.SelectKeywordActivity"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>
