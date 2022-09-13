@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="10dp">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -11,13 +11,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-2dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/white">
 
         <RelativeLayout
             android:id="@+id/relLayout1"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_photo"
@@ -62,8 +63,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/clubname"
-                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
                     android:layout_toRightOf="@+id/username"
                     android:text="20분전"
                     android:textColor="@color/grey"
@@ -79,8 +80,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="25dp"
-                android:src="@drawable/ic_ellipses"
-                app:srcCompat="@drawable/ic_ellipses" />
+                android:src="@drawable/ic_ellipses_512w"
+                app:srcCompat="@drawable/ic_ellipses_512w" />
 
 
         </RelativeLayout>
@@ -106,9 +107,10 @@
             android:layout_marginLeft="22dp"
             android:layout_marginTop="14dp"
             android:layout_marginRight="22dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
 
             <com.example.poten.Utils.SquareImageView
                 android:id="@+id/post_images"
@@ -121,10 +123,11 @@
         <RelativeLayout
             android:id="@+id/relLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_below="@+id/relLayout2"
             android:layout_marginLeft="22dp"
-            android:layout_marginRight="23dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="20dp"
             android:background="@color/white"
             android:padding="5dp">
 
@@ -136,7 +139,11 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginRight="22dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="40dp"
+                android:layout_toStartOf="@+id/textView"
+                android:ellipsize="end"
+                android:maxLines="3"
                 android:paddingRight="0dp"
                 android:text="쿠킹틴즈 5기 최고\n2조 친구들이랑 모여서 서브 샌드위치를 만들어 먹었다앙 에어프라이어에 캄튀도 만들어봤는데 너무 맛있어서 다들."
                 android:textColor="#2B2B2B"
@@ -179,7 +186,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_poten"
+                    android:src="@drawable/ic_poten_512w"
                     android:visibility="invisible" />
 
                 <ImageView
@@ -187,7 +194,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_unpoten"
+                    android:src="@drawable/ic_unpoten_512w"
                     android:visibility="visible" />
             </RelativeLayout>
 
@@ -209,9 +216,9 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="13dp"
                 android:layout_toRightOf="@+id/heart_count"
-                android:src="@drawable/ic_commentbox"
+                android:src="@drawable/ic_commentbox_512w"
                 android:visibility="visible"
-                app:srcCompat="@drawable/ic_commentbox" />
+                app:srcCompat="@drawable/ic_commentbox_512w" />
 
             <TextView
                 android:id="@+id/speech_count"

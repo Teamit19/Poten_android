@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">POTEN</string>
+    <string-array name="spinner_array">
+        <item>추천</item>
+        <item>팔로잉</item>
+    </string-array>
 </resources>

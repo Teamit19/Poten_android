@@ -1,4 +1,4 @@
-package com.example.poten.Home
+package com.example.poten.Board
 
 class Post(//    var postId : String ?= "", // 글 고유 id
         var clubname : String ?= "", //  동아리 이름
