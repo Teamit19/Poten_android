@@ -18,7 +18,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.example.poten.Model.secondItem;
 import com.example.poten.R;
-import com.example.poten.Utils.MemberListAdapter;
 
 import org.w3c.dom.Text;
 
@@ -31,7 +30,12 @@ public class SecondItemAdapter extends RecyclerView.Adapter<SecondItemAdapter.My
 
     int[] myImageList = {R.drawable.ic_account_circle};
 
+    public SecondItemAdapter(){}
     public SecondItemAdapter(List<secondItem> albumList){
+        this.albumList = albumList;
+    }
+    public SecondItemAdapter(Context mContext, List<secondItem> albumList){
+        this.mContext = mContext;
         this.albumList = albumList;
     }
 
