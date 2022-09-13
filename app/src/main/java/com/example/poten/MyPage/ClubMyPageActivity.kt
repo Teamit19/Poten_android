@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,13 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.poten.Model.memberList
+import com.example.poten.Model.secondItem
 import com.example.poten.R
 import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.MemberListAdapter
 import com.example.poten.Utils.PagerFragmentStateAdapter
 import com.example.poten.Utils.SecondFragment.SecondFragment
 import com.example.poten.databinding.ActivityClubMyPageBinding
-import com.google.android.material.tabs.TabLayout
+import com.example.poten.databinding.LayoutClubprofileBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ClubMyPageActivity : AppCompatActivity() {
@@ -57,7 +57,6 @@ class ClubMyPageActivity : AppCompatActivity() {
         "공고",
         "활동"
     )
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -115,9 +114,6 @@ class ClubMyPageActivity : AppCompatActivity() {
             Log.d("TAG", "onClick : navigating back to profile page")
             finish()
         })
-
-        // tablayout and viewpager
-
 
         // FragmentStateAdapter 초기화
         val pagerAdapter = PagerFragmentStateAdapter(this)

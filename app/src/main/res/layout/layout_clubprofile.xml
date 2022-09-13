@@ -12,25 +12,20 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:fitsSystemWindows="true"
-            android:background="@android:color/transparent"
+            android:background="@drawable/club_banner"
+            android:scaleType="fitCenter"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/ctolbar"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="100dp"
                 android:fitsSystemWindows="true"
                 app:collapsedTitleTextAppearance="@color/white"
                 app:expandedTitleMargin="5dp"
                 app:expandedTitleMarginStart="48dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="Profile">
-                <RelativeLayout
-                    android:id="@+id/clubbanner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/club_banner"
-                    android:scaleType="fitCenter"/>
                 <androidx.appcompat.widget.Toolbar
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
@@ -65,6 +60,63 @@
 
                 </androidx.appcompat.widget.Toolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <RelativeLayout
+                android:id="@+id/relLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_gravity="bottom"
+                android:paddingHorizontal="30dp"
+                android:background="@drawable/round_nostroke"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_collapseMode="pin">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/club_profile"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="0.5dp" />
+
+                <RelativeLayout
+                    android:id="@+id/relLayout2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="24dp"
+                    android:layout_toRightOf="@+id/profile_photo">
+
+                    <TextView
+                        android:id="@+id/clubname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="쿠킹틴즈"
+                        android:textColor="#2B2B2B"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/clubcomment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/clubname"
+                        android:text="요리사를 꿈꾸는 쿠킹틴즈"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/ivEllipses"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_verticle_three_dots"
+                    app:tint="#DFDFDF"/>
+            </RelativeLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -72,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            app:behavior_overlapTop="100dp"
+            app:behavior_overlapTop="0dp"
             app:layout_anchor="@+id/appbar"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             >
@@ -80,8 +132,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_scrollFlags="scroll">
+                android:orientation="vertical">
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -91,60 +142,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-                            <RelativeLayout
-                                android:id="@+id/relLayout1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingHorizontal="30dp"
-                                android:layout_marginTop="30dp"
-                                android:background="@drawable/setting_background">
 
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:id="@+id/profile_photo"
-                                    android:layout_width="65dp"
-                                    android:layout_height="65dp"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginBottom="16dp"
-                                    android:src="@drawable/club_profile"
-                                    app:civ_border_color="@color/black"
-                                    app:civ_border_width="0.5dp" />
-
-                                <RelativeLayout
-                                    android:id="@+id/relLayout2_1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="24dp"
-                                    android:layout_toRightOf="@+id/profile_photo">
-
-                                    <TextView
-                                        android:id="@+id/clubname"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="쿠킹틴즈"
-                                        android:textColor="#2B2B2B"
-                                        android:textSize="18sp" />
-
-                                    <TextView
-                                        android:id="@+id/clubcomment"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_below="@+id/clubname"
-                                        android:text="요리사를 꿈꾸는 쿠킹틴즈"
-                                        android:textColor="@color/black"
-                                        android:textSize="13sp" />
-
-                                </RelativeLayout>
-                                <ImageView
-                                    android:id="@+id/ivEllipses"
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginRight="20dp"
-                                    android:src="@drawable/ic_verticle_three_dots"
-                                    app:tint="#DFDFDF"/>
-                            </RelativeLayout>
 
 
                             <androidx.constraintlayout.widget.ConstraintLayout
@@ -414,13 +412,9 @@
                     android:id="@+id/pager"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_scrollFlags="scroll"/>
+                    app:layout_scrollFlags="scroll">
+                </androidx.viewpager2.widget.ViewPager2>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ㅅㄷㄴㅅ"
-                    android:textSize="50sp"/>
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
