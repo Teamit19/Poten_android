@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:name=".GlobalApplication"
         android:theme="@style/Theme.POTEN">
+
+        <activity
+            android:name=".Feed.UploadFeedActivity"
+            android:exported="false" />
         <activity
             android:name=".MyPage.ClubMyPageActivity"
             android:exported="false" />
