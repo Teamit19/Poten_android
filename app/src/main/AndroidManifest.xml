@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.POTEN">
         <activity
+            android:name=".MyPage.ClubLeaderPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Search.SearchActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".MyPage.ClubMyPageActivity"
             android:exported="false" />
         <activity
@@ -17,29 +23,25 @@
             android:exported="false" />
         <activity
             android:name=".Login.LoginActivity"
-            android:exported="true">
-        </activity>
-
-
+            android:exported="true" />
         <activity
             android:name=".Home.HomeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.SelectAreaActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".Login.SelectKeywordActivity"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name=".Login.SelectAreaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Login.SelectKeywordActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
