@@ -1,15 +1,20 @@
 package com.example.poten.Login
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginAreaBinding
 import com.example.poten.databinding.ActivityLoginKeywordBinding
+import com.example.poten.interfaces.UserApi
 
 class SelectKeywordActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginKeywordBinding
     var datas = mutableListOf<String>()
+    var clickPosition = mutableListOf<Int>()
 
+    var retrofit = RetrofitClient.create(UserApi::class.java, RetrofitClient.getAuth())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +24,21 @@ class SelectKeywordActivity : AppCompatActivity() {
         initializelist()
         initRecycler()
 
+        binding.btnNext.setOnClickListener {
+
+        }
+
     }
 
     private fun initRecycler() {
         var areaAdapter = AreaAdapter(this)
         areaAdapter.datas=datas
+        areaAdapter.setItemClickListener(object : AreaAdapter.OnItemClickListener {
+            override fun onClick(v: View, position: Int) {
+                clickPosition.add(position)
+            }
+
+        })
         binding.recyclerView.addItemDecoration(RecyclerViewDecoration(4))
         binding.recyclerView.adapter = areaAdapter
         binding.recyclerView.layoutManager= GridLayoutManager(applicationContext, 4)
