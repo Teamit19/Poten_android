@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.poten.MainActivity
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.dto.SessionResponse
@@ -15,14 +14,9 @@ import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
-import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
-
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -88,7 +82,7 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                         })                        
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, SelectAreaActivity::class.java)
                         startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         finish()
                     }
