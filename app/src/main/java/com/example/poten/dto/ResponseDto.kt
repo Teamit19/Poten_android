@@ -1,6 +1,5 @@
 package com.example.poten.Board.model
 
-import com.example.poten.dto.UserResponse
 
 
 data class BoardResponse (
@@ -99,9 +98,4 @@ data class UserResponse(
     var id: Long,
     var email: String,
     var name: String,
-    var nickname: String,
-    var sex: Int,
-    var birth: String,
-    var phone: String,
-    var school: String
 )

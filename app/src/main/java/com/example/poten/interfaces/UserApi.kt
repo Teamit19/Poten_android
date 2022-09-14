@@ -1,9 +1,9 @@
 package com.example.poten.interfaces
 
-import com.example.poten.Board.model.BoardResponse
 import com.example.poten.Board.model.BoolResponse
-import com.example.poten.dto.BoardForm
+import com.example.poten.Board.model.UserResponse
 import com.example.poten.dto.SessionResponse
+import com.example.poten.dto.SignUpForm
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -15,9 +15,13 @@ interface UserApi {
     @GET("oauth/kakao/{token}")
     fun getKakao(@Path("token") token : String): Call<SessionResponse>
 
-    @POST("/api/users/keyword")
+    @GET("/api/users")
+    fun getUserInfo(): Call<UserResponse>
 
+    @POST("/api/users/keyword")
     fun postInterest(@Body interestList: HashMap<String, List<String>>):Call<BoolResponse>
 
+    @POST("/api/users")
+    fun postInfo(@Body signUpForm: SignUpForm):Call<BoolResponse>
 
 }

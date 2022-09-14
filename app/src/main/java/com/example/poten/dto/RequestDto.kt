@@ -8,3 +8,9 @@ data class BoardForm (
 //    var List<MultipartFile> pics;
 
 )
+
+data class SignUpForm(
+    var email: String,
+    var name: String
+
+)

@@ -49,6 +49,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Login.LoginInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".Board.HomeActivity"
             android:exported="true">
 

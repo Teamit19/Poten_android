@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.poten.Board.HomeActivity
+import com.example.poten.Board.model.UserResponse
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.dto.SessionResponse
@@ -12,7 +14,6 @@ import com.example.poten.interfaces.UserApi
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,8 +27,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val keyHash = Utility.getKeyHash(this)
-        Log.d("Hash", keyHash)
+//        val keyHash = Utility.getKeyHash(this)
+//        Log.d("Hash", keyHash)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -75,16 +76,16 @@ class LoginActivity : AppCompatActivity() {
                                 Log.i("LOGIN", "api 성공}"+response.body())
                                 val sessionId = response.body()?.sessionId.toString()
                                 setSession(sessionId)
+                                checkSignup()
                             }
 
                             override fun onFailure(call: Call<SessionResponse>, t: Throwable) {
                                 Log.i("LOGIN", "api 실패"+t.message.toString())
                             }
 
-                        })                        
-                        val intent = Intent(this, SelectAreaActivity::class.java)
-                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                        finish()
+                        })
+
+
                     }
                 }
             } else {
@@ -100,6 +101,39 @@ class LoginActivity : AppCompatActivity() {
         cm.setCookie(RetrofitClient.BASE_URL, sessionId)
         Log.d("sessionId From Cm", cm.getCookie(RetrofitClient.BASE_URL))
         Log.d("sessionId From Server", sessionId)
+    }
+
+    fun setNextBtn(signUpState:Boolean) {
+        if (signUpState) {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            finish()
+        } else {
+            val intent = Intent(this, LoginInfoActivity::class.java)
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            finish()
+        }
+    }
+
+    fun checkSignup() {
+        var retrofitAuth = RetrofitClient.create(UserApi::class.java, RetrofitClient.getAuth())
+
+        retrofitAuth.getUserInfo().enqueue(object : Callback<UserResponse> {
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                Log.i("User", "getUserInfo 성공"+ response.body().toString())
+                if (response.body()?.name?.length!! > 0) {
+                    Log.i("User", "name null 여부 확인 성공")
+                    setNextBtn(true)
+                }else{
+                    setNextBtn(false)
+                }
+
+            }
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                Log.e("User", "getUserInfo 실패"+t.message.toString())
+            }
+        })
+
     }
 
 
