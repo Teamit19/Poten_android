@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         //The gson builder
         gson =  GsonBuilder().setLenient().create()
 
-        retrofit = Retrofit.Builder().baseUrl("http://192.168.35.193:8080/").addConverterFactory(GsonConverterFactory.create(gson)).build();
+        retrofit = Retrofit.Builder().baseUrl("http://172.30.1.3:8080/").addConverterFactory(GsonConverterFactory.create(gson)).build();
         service = retrofit.create(RetrofitService::class.java);
 
         button0 = findViewById(R.id.button)
@@ -297,7 +297,7 @@ class MainActivity : AppCompatActivity() {
                 if (response?.isSuccessful) {
                     Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
                     Log.d("레트로핏 결과2",""+response?.body()?.content)
-                    Glide.with(this@MainActivity).load("http://192.168.35.193:8080/"+response?.body()?.content).into(imageView2)
+                    Glide.with(this@MainActivity).load("http://172.30.1.3:8080/"+response?.body()?.content).into(imageView2)
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Some error occurred...", Toast.LENGTH_LONG).show();
