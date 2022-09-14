@@ -24,7 +24,7 @@
 
                 <Spinner
                     android:id="@+id/spinnerDirectory"
-                    android:layout_width="65dp"
+                    android:layout_width="64dp"
                     android:layout_height="25dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="15dp"
