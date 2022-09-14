@@ -6,6 +6,7 @@ import android.util.Log
 import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.poten.MainActivity
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.dto.SessionResponse
@@ -88,7 +89,7 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                         })                        
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, ClubMyPageActivity::class.java)
                         startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         finish()
                     }

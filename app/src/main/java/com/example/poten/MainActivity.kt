@@ -22,7 +22,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.example.poten.Home.HomeActivity
 import com.example.poten.Board.HomeActivity
 import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.databinding.ActivityMainBinding
@@ -31,6 +30,7 @@ import com.example.poten.dto.Test
 import com.example.poten.interfaces.RetrofitService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.kakao.sdk.common.util.Utility
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -40,6 +40,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -63,12 +64,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val keyHash = Utility.getKeyHash(this)
+        Log.d("Hash", keyHash)
         //The gson builder
         gson =  GsonBuilder().setLenient().create()
 
         retrofit = Retrofit.Builder().baseUrl("http://192.168.35.193:8080/").addConverterFactory(GsonConverterFactory.create(gson)).build();
         service = retrofit.create(RetrofitService::class.java);
+
 
         button0 = findViewById(R.id.button)
         button1 = findViewById(R.id.button1)
@@ -297,7 +300,7 @@ class MainActivity : AppCompatActivity() {
                 if (response?.isSuccessful) {
                     Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
                     Log.d("레트로핏 결과2",""+response?.body()?.content)
-                    Glide.with(this@MainActivity).load("http://192.168.35.193:8080/"+response?.body()?.content).into(imageView2)
+                    Glide.with(this@MainActivity).load("http://192.168.35.193:8080/files/images/696e3efa-c5a2-4df7-8e79-39765e95f683_test.png").into(imageView2)
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Some error occurred...", Toast.LENGTH_LONG).show();
