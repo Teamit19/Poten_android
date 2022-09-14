@@ -87,6 +87,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/fragment_second.xml" value="0.24818840579710144" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/fragment_view_notice.xml" value="0.24818840579710144" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/fragment_view_post.xml" value="0.24818840579710144" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/home_spinner_item.xml" value="0.20820863616930313" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/item_activitylist.xml" value="0.20820863616930313" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/item_category.xml" value="0.24818840579710144" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/item_memberlist.xml" value="0.1125" />
@@ -107,7 +108,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_mypage_setting.xml" value="0.4" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_post_toolbar.xml" value="0.264" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_top_clubprofile.xml" value="0.20820863616930313" />
-        <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.264" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.536" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_top_notice.xml" value="0.1" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_top_view_profile.xml" value="0.1125" />
         <entry key="..\:/project/Poten_android/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />

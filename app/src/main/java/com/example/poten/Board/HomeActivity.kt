@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
     private val HOME_FRAGMENT = 1
 
     private lateinit var floatBtn : FloatingActionButton
-//    private lateinit var spinnerDirectory : Spinner
+    private lateinit var spinner : Spinner
 
     // widgets
     private var mFrameLayout: FrameLayout? = null
@@ -55,12 +55,22 @@ class HomeActivity : AppCompatActivity() {
         mFrameLayout = findViewById<View>(R.id.container) as FrameLayout
         mRelativeLayout = findViewById<View>(R.id.relLayoutParent) as RelativeLayout
         floatBtn = findViewById(R.id.floatBtn)
-//        spinnerDirectory = findViewById(R.id.spinnerDirectory)
+        spinner = findViewById(R.id.spinnerDirectory)
 
 
         // 스피너(드롭다운) 연결
-//        var spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.spinner_array, R.layout.snippet_top_feed_toolbar)
-//        spinnerDirectory.adapter = spinnerAdapter
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.home_spinner_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
+
+
 
         // 리사이클러뷰 어댑터에 화면에 띄울 데이터를 넘긴다.
         rv_postList = findViewById<RecyclerView>(R.id.home_recyView) as RecyclerView
