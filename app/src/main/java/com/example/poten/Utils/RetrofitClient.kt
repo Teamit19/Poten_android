@@ -63,7 +63,11 @@ class RetrofitClient {
 
         // 쿠키매니저에서 쿠키정보 가져오는 편의 메소드
         fun getAuth() : String {
-            return CookieManager.getInstance().getCookie(BASE_URL) ?: ""
+//            val cm: CookieManager = CookieManager.getInstance()
+//            cm.removeAllCookies(null)
+//            cm.setCookie(RetrofitClient.BASE_URL, "B04EF590F45AB9AE74BAB490BE76DCCA")
+            //return CookieManager.getInstance().getCookie(BASE_URL) ?: ""
+            return "B04EF590F45AB9AE74BAB490BE76DCCA"
         }
 
         fun clearCookieManager() {
