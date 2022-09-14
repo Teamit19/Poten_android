@@ -1,22 +1,29 @@
 package com.example.poten.Search
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.Model.SearchNoticeItem
 import com.example.poten.R
+import com.example.poten.Utils.BottomNavigationViewHelper
 import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.SearchFragment.ClubFragment
 import com.example.poten.Utils.SearchFragment.NoticeFragment
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.example.poten.Utils.SecondFragment.SecondFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 
 
 class SearchActivity : AppCompatActivity() {
+
+    private val mContext: Context = this@SearchActivity
+    private val ACTIVITY_NUM = 2
 
     private lateinit var toolbar : Toolbar
     private lateinit var tabLayout: TabLayout
@@ -27,11 +34,11 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        viewPager = findViewById(R.id.viewpager)
-        setupViewPager(viewPager)
+        //viewPager = findViewById(R.id.viewpager)
+        //setupViewPager(viewPager)
 
-        tabLayout = findViewById(R.id.tabLayout)
-        tabLayout.setupWithViewPager(viewPager)
+        //tabLayout = findViewById(R.id.tabLayout)
+        //tabLayout.setupWithViewPager(viewPager)
 
         searchView = findViewById(R.id.searchview)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -45,6 +52,11 @@ class SearchActivity : AppCompatActivity() {
                 return false
             }
         })
+
+
+        // 네비게이션 뷰
+        setupBottomNavigationView()
+
     }
 
     private fun setupViewPager(viewPager: ViewPager){
@@ -66,5 +78,16 @@ class SearchActivity : AppCompatActivity() {
             }
         }
         return filteredItemList
+    }
+
+    private fun setupBottomNavigationView() {
+        //Log.d(HomeActivity.TAG, "setupBottomNavigationView: setting up BottomNavigationView")
+        val bottomNavigationViewEx =
+            findViewById<View>(R.id.bottomNavViewBar) as BottomNavigationView
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx)
+        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx)
+        val menu = bottomNavigationViewEx.menu
+        val menuItem = menu.getItem(ACTIVITY_NUM)
+        menuItem.isChecked = true
     }
 }

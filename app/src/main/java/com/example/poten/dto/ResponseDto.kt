@@ -11,7 +11,7 @@ data class BoardResponse (
     var comment: List<CommentResponse>? = null,
     var pics : FileResponse ?= null,
     var createdTime: String? = null,
-    var modifiedTime: String? = null
+    var modifiedTime: String? = null,
 )
 
 
@@ -76,10 +76,10 @@ data class PosterResponse (
     var title: String? = null,
     var content: String? = null,
     var deadlineDate: String? = null,
-
-    // private List<FileEntity> posterImg; // <<TODO>>
+    var pics : FileResponse ?= null,
     var createdTime: String? = null,
-    var modifiedTime: String? = null
+    var modifiedTime: String? = null,
+    var dday: Integer ? = null
 )
 
 

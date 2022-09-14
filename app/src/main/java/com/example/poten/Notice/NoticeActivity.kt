@@ -1,10 +1,11 @@
 package com.example.poten.Notice
 
+import android.content.Context
 import SingleAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,12 +20,14 @@ import com.example.poten.Board.model.PosterResponseList
 import com.example.poten.Login.AreaAdapter
 import com.example.poten.Login.RecyclerViewDecoration
 import com.example.poten.R
+import com.example.poten.Utils.BottomNavigationViewHelper
 import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.example.poten.Utils.SecondFragment.SecondFragment
 import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.databinding.ActivityNoticeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.poten.databinding.SnippetTopNoticeBinding
 import com.example.poten.interfaces.BoardApi
 import com.example.poten.interfaces.PosterApi
@@ -34,7 +37,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class NoticeActivity : AppCompatActivity() {
-
+    private val mContext: Context = this@NoticeActivity
+    private val ACTIVITY_NUM = 1
     private lateinit var binding: ActivityNoticeBinding
     var categoryList = mutableListOf<String>()
     private val postList =  mutableListOf<PosterResponse>()
@@ -59,7 +63,18 @@ class NoticeActivity : AppCompatActivity() {
         getPosterAll()
         setSpinner()
 
+        setupBottomNavigationView()
+    }
 
+    private fun setupBottomNavigationView() {
+        //Log.d(HomeActivity.TAG, "setupBottomNavigationView: setting up BottomNavigationView")
+        val bottomNavigationViewEx =
+            findViewById<View>(R.id.bottomNavViewBar) as BottomNavigationView
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx)
+        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx)
+        val menu = bottomNavigationViewEx.menu
+        val menuItem = menu.getItem(ACTIVITY_NUM)
+        menuItem.isChecked = true
     }
 
     private fun setSpinner() {
