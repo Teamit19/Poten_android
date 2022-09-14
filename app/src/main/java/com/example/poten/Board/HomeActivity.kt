@@ -70,6 +70,27 @@ class HomeActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
+        // 스피너 리스너 연결 및 구현 (피드 데이터 불러오기)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemClickListener,
+            AdapterView.OnItemSelectedListener {
+            override fun onItemClick(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                Log.i("SPINNER", "onItemClick" + position.toString())
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position : Int, p3: Long) {
+                Log.i("SPINNER", "onItemSelected position" + position.toString())
+                if (position == 0){
+                    getBoardByInterest()
+                } else if (position == 1){
+                    getBoardByFollow()
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                Log.i("SPINNER", "onNothingSelected position")
+                getBoardAll()
+            }
+        }
 
 
         // 리사이클러뷰 어댑터에 화면에 띄울 데이터를 넘긴다.
@@ -82,7 +103,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 피드 데이터 불러오기
+        // 기본 피드 데이터 불러오기
         getBoardAll()
 
         // 네비게이션 뷰
@@ -91,8 +112,9 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    // (스피너 기본 설정) 서버에서 모든 게시물 불러오기
     private fun getBoardAll() {
-        Log.i("BOARD", "호출됨")
+        Log.i("BOARD", "getBoardAll 호출됨")
         var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
 
         retrofit.getBoardAll().enqueue(object : Callback<BoardResponseList> {
@@ -119,6 +141,63 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
+    // (스피너 설정 1)서버에서 팔로잉한 피드 불러오기
+    private fun getBoardByInterest() {
+        Log.i("BOARD", "getBoardByInterest 호출됨")
+        var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
+
+        retrofit.getBoardByInterest().enqueue(object : Callback<BoardResponseList> {
+            override fun onResponse(call: Call<BoardResponseList>, response: Response<BoardResponseList>) {
+                Log.i("BOARD", "getBoardByInterest 성공"+ response.body().toString())
+
+                postList.clear() // 비우기
+                response.body()?.boardResponseList?.let { it -> postList.addAll(it) }
+
+                // 어댑터 연결
+                var manager = LinearLayoutManager (getApplicationContext())
+                manager.reverseLayout = true
+                manager.stackFromEnd = true
+
+                rv_postList.layoutManager = manager
+                rv_postList.setHasFixedSize(true)
+                rv_postList.adapter = adapter
+                adapter.setListData(postList)
+            }
+
+            override fun onFailure(call: Call<BoardResponseList>, t: Throwable) {
+                Log.e("BOARD", "getBoardByInterest 실패"+t.message.toString())
+            }
+        })
+    }
+
+    // (스피너 설정 2)서버에서 팔로잉한 피드 불러오기
+    private fun getBoardByFollow() {
+        Log.i("BOARD", "getBoardByFollow 호출됨")
+        var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
+
+        retrofit.getBoardByFollow().enqueue(object : Callback<BoardResponseList> {
+            override fun onResponse(call: Call<BoardResponseList>, response: Response<BoardResponseList>) {
+                Log.i("BOARD", "getBoardByFollow 성공"+ response.body().toString())
+
+                postList.clear() // 비우기
+                response.body()?.boardResponseList?.let { it -> postList.addAll(it) }
+
+                // 어댑터 연결
+                var manager = LinearLayoutManager (getApplicationContext())
+                manager.reverseLayout = true
+                manager.stackFromEnd = true
+
+                rv_postList.layoutManager = manager
+                rv_postList.setHasFixedSize(true)
+                rv_postList.adapter = adapter
+                adapter.setListData(postList)
+            }
+
+            override fun onFailure(call: Call<BoardResponseList>, t: Throwable) {
+                Log.e("BOARD", "getBoardByFollow 실패"+t.message.toString())
+            }
+        })
+    }
 
     private fun setupBottomNavigationView() {
         //Log.d(HomeActivity.TAG, "setupBottomNavigationView: setting up BottomNavigationView")

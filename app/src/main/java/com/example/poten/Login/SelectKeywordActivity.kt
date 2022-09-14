@@ -19,7 +19,8 @@ import retrofit2.Response
 class SelectKeywordActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginKeywordBinding
     var datas = mutableListOf<String>()
-    var clickInterest = mutableListOf<String>()
+    var clickInterest = mutableSetOf<String>()
+    var category = mutableMapOf<String, List<String>>()
 
     var retrofit = RetrofitClient.create(UserApi::class.java, RetrofitClient.getAuth())
 
@@ -39,8 +40,8 @@ class SelectKeywordActivity : AppCompatActivity() {
 
     }
 
-    private fun postInterest(interests: List<String>) {
-        var hashMap=HashMap<String, List<String>>()
+    private fun postInterest(interests: Set<String>) {
+        var hashMap=HashMap<String, Set<String>>()
         hashMap.put("interestList", interests)
         retrofit.postInterest(hashMap).enqueue(object : Callback<BoolResponse> {
             override fun onResponse(call: Call<BoolResponse>, response: Response<BoolResponse>) {
@@ -61,7 +62,13 @@ class SelectKeywordActivity : AppCompatActivity() {
         areaAdapter.datas=datas
         areaAdapter.setItemClickListener(object : AreaAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
-                clickInterest.add(datas[position])
+
+                category.forEach {
+                    if (it.value.contains(datas[position])) {
+                        clickInterest.add(it.key)
+                    }
+                }
+//                clickInterest.add(datas[position])
             }
 
         })
@@ -72,6 +79,19 @@ class SelectKeywordActivity : AppCompatActivity() {
     }
 
     fun initializelist() {
+        var arr= mutableListOf<String>("연기", "글쓰기", "댄스", "사진", "전시회", "힙합", "민속놀이", "영화", "밴드", "악기", "연출", "크리에이터", "보드게임")
+        category.put("문화/예술", arr)
+        arr= mutableListOf<String>("봉사활동", "요리", "베이킹 수업")
+        category.put("봉사", arr)
+        arr= mutableListOf<String>("IT", "프로그래밍")
+        category.put("IT", arr)
+        arr= mutableListOf<String>("스포츠", "달리기", "요가", "수영", "클라이밍")
+        category.put("스포츠", arr)
+        arr= mutableListOf<String>("독서", "자연과학", "언어", "역사", "영어회화", "수학", "자유토론")
+        category.put("학술", arr)
+        arr= mutableListOf<String>("기획", "디자인", "발표", "스피치", "광고")
+        category.put("공모전", arr)
+
         with(datas) {
             add("IT")
             add("요리")

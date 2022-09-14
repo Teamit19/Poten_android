@@ -20,6 +20,13 @@ interface BoardApi {
     // 조회
     @GET("boards/all")
     fun getBoardAll(): Call<BoardResponseList>
+
+    @GET("boards/follows")
+    fun getBoardByFollow(): Call<BoardResponseList>
+
+    @GET("boards/interest")
+    fun getBoardByInterest(): Call<BoardResponseList>
+
 //
 //    @GET("boards/{boardId}")
 //    fun getBoard(): Call<Test>

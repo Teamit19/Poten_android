@@ -19,7 +19,7 @@ interface UserApi {
     fun getUserInfo(): Call<UserResponse>
 
     @POST("/api/users/keyword")
-    fun postInterest(@Body interestList: HashMap<String, List<String>>):Call<BoolResponse>
+    fun postInterest(@Body interestList: HashMap<String, Set<String>>):Call<BoolResponse>
 
     @POST("/api/users")
     fun postInfo(@Body signUpForm: SignUpForm):Call<BoolResponse>
