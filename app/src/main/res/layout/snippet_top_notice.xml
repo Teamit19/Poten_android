@@ -2,12 +2,12 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="@drawable/white_grey_border_bottom">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/profileToolBar">
 
             <RelativeLayout
@@ -16,11 +16,11 @@
 
                 <Spinner
                     android:id="@+id/spinnerDirectory"
-                    android:layout_width="65dp"
-                    android:layout_height="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="10dp" />
 
             </RelativeLayout>
 
@@ -29,3 +29,4 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 </merge>
+

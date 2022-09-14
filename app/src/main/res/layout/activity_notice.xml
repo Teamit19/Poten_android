@@ -25,7 +25,7 @@
         <RelativeLayout
             android:id="@+id/relLayout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="70dp">
 
             <include layout="@layout/snippet_top_notice" />
 
@@ -43,7 +43,7 @@
                 android:id="@+id/recycleView_Category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/recycleView_Category"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="23dp"
                 android:text="마감임박"
                 android:textColor="#2B2B2B"
                 android:textSize="20sp"
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/recycleView_Deadline"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="24dp"
                 android:paddingHorizontal="20dp">
 
                 <TextView
@@ -95,10 +95,11 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_layout_1"
-                android:paddingHorizontal="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
                 app:layout_scrollFlags="scroll"
                 app:tabIndicatorColor="#525252"
                 app:tabSelectedTextColor="#525252" />
@@ -108,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tabs"
-                android:paddingHorizontal="20dp">
+                >
 
             </androidx.viewpager.widget.ViewPager>
 
