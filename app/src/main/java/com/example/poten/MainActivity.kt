@@ -22,7 +22,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.example.poten.Home.HomeActivity
 import com.example.poten.Board.HomeActivity
 import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.databinding.ActivityMainBinding
@@ -166,6 +165,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
+
     fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = MediaStore.Images.Media.CONTENT_TYPE

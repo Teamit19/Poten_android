@@ -3,19 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/activity_home.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/activity_login.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_bottom_navigation_view.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_card_notice.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_category.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_center_viewpager.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_club_listitem.xml" value="0.14907407407407408" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_top_tabs.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/layout_view_post.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/snippet_post_toolbar.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/layout/snippet_top_feed_toolbar.xml" value="0.17708333333333334" />
-        <entry key="..\:/KB/Poten_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.154" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/black_rounded_button.xml" value="0.212" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/gradient_cover.xml" value="0.192" />
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/drawable/ic_add_alarm.xml" value="0.345" />
@@ -64,8 +51,6 @@
         <entry key="..\:/Users/pje/AndroidStudioProjects/POTEN/app/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.2125" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/input_background.xml" value="0.3675" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/round.xml" value="0.3675" />
-        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/round_button1.xml" value="0.3655" />
-        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/drawable/round_click.xml" value="0.3655" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/activity_login_area.xml" value="0.27421875" />
@@ -74,7 +59,7 @@
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/fragment_view_notice.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/fragment_view_post.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/item_area.xml" value="0.365625" />
-        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/item_category.xml" value="0.6666666666666666" />
+        <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_bottom_navigation_view.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_card_notice.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/samsung/Desktop/android/Poten_android/app/src/main/res/layout/layout_category.xml" value="0.36666666666666664" />
@@ -88,7 +73,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/drawable/sh_white_btn.xml" value="0.243" />
         <entry key="..\:/project/Poten_android/app/src/main/res/drawable/white_grey_border_bottom.xml" value="0.1235" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_club_my_page.xml" value="0.1125" />
-        <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_create_post.xml" value="0.1" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_create_post.xml" value="0.2" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_login.xml" value="0.18125" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_login_area.xml" value="0.24818840579710144" />
@@ -115,7 +100,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_create_post.xml" value="0.2" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_mypage_setting.xml" value="0.20820863616930313" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_top_tabs.xml" value="0.1" />
-        <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_view_post.xml" value="0.8" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_view_post.xml" value="0.4" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_center_edit_profile.xml" value="0.1125" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_create_post.xml" value="0.152" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_edit_profile.xml" value="0.24818840579710144" />

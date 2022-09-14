@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.poten.Board.model.BoardResponse
 import com.example.poten.R
 import com.example.poten.Utils.SquareImageView
@@ -35,11 +36,17 @@ class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <
         holder.speech_count.text = postList[position].comment?.size.toString()
         holder.image_caption.text = postList[position].content.toString()
 
+//        Glide.with(this@PostListViewAdapter).load("http://172.30.1.3:8080/files/images/"+ postList[position].picUrl.toString()
+        Log.e( "BOARD", postList[position].pics?.fileName.toString());
+        Glide.with(holder.itemView?.context)
+            .load("http://172.30.1.3:8080/files/images/"+ postList[position].pics?.fileName)
+            .into(holder.post_images)
+
 
         // 하트 연결
-        holder.image_heart.setOnClickListener(
-            onHeartClicked()
-        )
+//        holder.image_heart.setOnClickListener(
+////            onHeartClicked()
+//        )
     }
 
     override fun getItemCount(): Int {

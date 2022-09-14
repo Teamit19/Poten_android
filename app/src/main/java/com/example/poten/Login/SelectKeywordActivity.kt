@@ -1,9 +1,11 @@
 package com.example.poten.Login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.poten.Board.HomeActivity
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginAreaBinding
 import com.example.poten.databinding.ActivityLoginKeywordBinding
@@ -25,7 +27,8 @@ class SelectKeywordActivity : AppCompatActivity() {
         initRecycler()
 
         binding.btnNext.setOnClickListener {
-
+            val intent = Intent(this, HomeActivity::class.java) // <<TODO>>
+            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))// <<TODO>>
         }
 
     }
