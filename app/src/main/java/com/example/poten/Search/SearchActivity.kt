@@ -34,11 +34,11 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        viewPager = findViewById(R.id.viewpager)
-        setupViewPager(viewPager)
+        //viewPager = findViewById(R.id.viewpager)
+        //setupViewPager(viewPager)
 
-        tabLayout = findViewById(R.id.tabLayout)
-        tabLayout.setupWithViewPager(viewPager)
+        //tabLayout = findViewById(R.id.tabLayout)
+        //tabLayout.setupWithViewPager(viewPager)
 
         searchView = findViewById(R.id.searchview)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
