@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.poten.Board.HomeActivity
 import com.example.poten.Board.model.BoolResponse
 import com.example.poten.MainActivity
 import com.example.poten.Utils.RetrofitClient
@@ -33,7 +34,7 @@ class SelectKeywordActivity : AppCompatActivity() {
 
         binding.btnNext.setOnClickListener {
             postInterest(clickInterest)
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 

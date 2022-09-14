@@ -62,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.home_spinner_array,
-            android.R.layout.simple_spinner_item
+            R.layout.home_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
