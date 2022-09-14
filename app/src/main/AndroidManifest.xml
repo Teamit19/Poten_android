@@ -24,6 +24,12 @@
             android:name=".Board.CreatePostActivity"
             android:exported="false" />
         <activity
+            android:name=".MyPage.ClubLeaderPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Search.SearchActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".MyPage.ClubMyPageActivity"
             android:exported="false" />
         <activity
@@ -59,12 +65,7 @@
             android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

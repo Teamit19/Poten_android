@@ -2,18 +2,24 @@ package com.example.poten.interfaces
 
 import retrofit2.Call
 import com.example.poten.Board.model.BoardResponse
+import com.example.poten.Board.model.BoardResponseList
 import com.example.poten.dto.BoardForm
-import retrofit2.http.Body
-import retrofit2.http.POST
+import okhttp3.MultipartBody
+import retrofit2.http.*
 
 interface BoardApi {
     // 업로드
     @POST("boards/upload")
-    fun saveBoard(@Body boardForm: BoardForm): Call<BoardResponse>
+    @Multipart
+    fun saveBoard(@Part pics: MultipartBody.Part,
+                  @Part("clubId") clubId: Long,
+                  @Part("content") content: String): Call<BoardResponse>
+//    fun saveBoard(@Part pics: MultipartBody.Part, @Part("dto") boardForm: BoardForm): Call<BoardResponse>
+// fun saveBoard(@Body boardForm: BoardForm): Call<BoardResponse>
 
-//    // 조회
-//    @GET("boards/all")
-//    fun getBoardAll(): Call<BoardResponseList>
+    // 조회
+    @GET("boards/all")
+    fun getBoardAll(): Call<BoardResponseList>
 //
 //    @GET("boards/{boardId}")
 //    fun getBoard(): Call<Test>

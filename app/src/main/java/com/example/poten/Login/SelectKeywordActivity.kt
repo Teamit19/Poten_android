@@ -6,11 +6,9 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.poten.Board.model.BoardResponse
 import com.example.poten.Board.model.BoolResponse
 import com.example.poten.MainActivity
 import com.example.poten.Utils.RetrofitClient
-import com.example.poten.databinding.ActivityLoginAreaBinding
 import com.example.poten.databinding.ActivityLoginKeywordBinding
 import com.example.poten.interfaces.UserApi
 import retrofit2.Call

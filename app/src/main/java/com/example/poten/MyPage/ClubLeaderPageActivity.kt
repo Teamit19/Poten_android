@@ -23,12 +23,8 @@ import com.example.poten.Utils.SecondFragment.SecondFragment
 import com.example.poten.databinding.ActivityClubMyPageBinding
 import com.google.android.material.tabs.TabLayout
 
-class ClubMyPageActivity : AppCompatActivity() {
-    private val mContext: Context = this@ClubMyPageActivity
-
-    private lateinit var btnFollow : TextView
-    private lateinit var btnUnFollow : TextView
-    private lateinit var btnVolunteer : TextView
+class ClubLeaderPageActivity : AppCompatActivity() {
+    private val mContext: Context = this@ClubLeaderPageActivity
 
     // memgerlist recyclerview
     private lateinit var memberlist : ArrayList<memberList>
@@ -38,7 +34,6 @@ class ClubMyPageActivity : AppCompatActivity() {
     // tablayout and viewpager2
     private lateinit var viewPager : ViewPager
     private lateinit var tablayout : TabLayout
-
 
     // back press
     private lateinit var imgBackArror : ImageView
@@ -56,20 +51,16 @@ class ClubMyPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_club_my_page)
+        setContentView(R.layout.activity_club_leader_page)
 
         //binding SetUp
         val binding = (DataBindingUtil.setContentView(
             this, R.layout.activity_club_my_page) as ActivityClubMyPageBinding)
             .apply {
-                lifecycleOwner = this@ClubMyPageActivity
+                lifecycleOwner = this@ClubLeaderPageActivity
             }
 
         recyclerViewMemberlist = binding.recyclerViewMembers
-
-        btnFollow = binding.btnFollow
-        btnUnFollow = binding.btnUnfollow
-        btnVolunteer = binding.btnVolunteer
 
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(mContext)
         recyclerViewMemberlist.setLayoutManager(
@@ -90,21 +81,6 @@ class ClubMyPageActivity : AppCompatActivity() {
 
         memberListAdapter = MemberListAdapter(mContext, memberlist)
         recyclerViewMemberlist.setAdapter(memberListAdapter)
-
-        btnFollow.setOnClickListener(View.OnClickListener{
-            btnUnFollow.setVisibility(View.VISIBLE)
-            btnFollow.setVisibility(View.INVISIBLE)
-        })
-
-        btnUnFollow.setOnClickListener(View.OnClickListener{
-            btnFollow.setVisibility(View.VISIBLE)
-            btnUnFollow.setVisibility(View.INVISIBLE)
-        })
-
-        btnVolunteer.setOnClickListener(View.OnClickListener {
-            Log.d("지원하기", "지원하기 눌림")
-        })
-
 
         imgBackArror = binding.backArrow
         imgBackArror.setOnClickListener(View.OnClickListener {
