@@ -66,8 +66,8 @@ class RetrofitClient {
 //            val cm: CookieManager = CookieManager.getInstance()
 //            cm.removeAllCookies(null)
 //            cm.setCookie(RetrofitClient.BASE_URL, "B04EF590F45AB9AE74BAB490BE76DCCA")
-            //return CookieManager.getInstance().getCookie(BASE_URL) ?: ""
-            return "B04EF590F45AB9AE74BAB490BE76DCCA"
+            return CookieManager.getInstance().getCookie(BASE_URL) ?: ""
+
         }
 
         fun clearCookieManager() {
