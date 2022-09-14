@@ -15,7 +15,6 @@ import com.example.poten.databinding.ItemCategoryBinding
 class AreaAdapter(private val context: Context) : RecyclerView.Adapter<AreaAdapter.ViewHolder>() {
 
     var datas = mutableListOf<String>()
-    var clickStates = mutableListOf<Boolean>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
