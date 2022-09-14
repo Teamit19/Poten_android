@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_spinner_area">
+        <item>전국</item>
+        <item>서울특별시</item>
+        <item>경기도</item>
+
+    </string-array>
+</resources>

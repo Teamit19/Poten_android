@@ -36,9 +36,22 @@
                 android:layout_below="@id/tv_dday"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                android:textSize="13sp"
-                android:text="#경기도 #오프라인"
-                android:textColor="@color/white" />
+                android:text="#경기도"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/tv_hashtag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_dday"
+                android:layout_toRightOf="@id/tv_hashtag"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="#오프라인"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/relLayout2"
@@ -54,9 +67,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="해피봉사"
-                android:textStyle="bold"
                 android:textColor="#2B2B2B"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_subtitle"
