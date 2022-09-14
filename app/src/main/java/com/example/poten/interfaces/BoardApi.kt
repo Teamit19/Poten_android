@@ -3,6 +3,7 @@ package com.example.poten.interfaces
 import retrofit2.Call
 import com.example.poten.Board.model.BoardResponse
 import com.example.poten.Board.model.BoardResponseList
+import com.example.poten.Board.model.HeartBoardResponse
 import com.example.poten.dto.BoardForm
 import okhttp3.MultipartBody
 import retrofit2.http.*
@@ -49,12 +50,12 @@ interface BoardApi {
 //    fun deleteBoard(): Call<Test>
 //
 //    // 기타
-//    @POST("boards/{boardId}/heart")
-//    fun heartBoard(): Call<Test>
-//
-//    @POST("boards/{boardId}/unheart")
-//    fun unHeartBoard(): Call<Test>
-//
+    @POST("boards/{boardId}/heart")
+    fun heartBoard(): Call<HeartBoardResponse>
+
+    @POST("boards/{boardId}/unheart")
+    fun unHeartBoard(): Call<HeartBoardResponse>
+
 //    @POST("boards/{boardId}/unheart")
 //    fun unHeartBoard(): Call<Test>
 //

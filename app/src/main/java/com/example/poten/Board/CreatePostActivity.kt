@@ -21,9 +21,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import com.example.poten.Board.model.BoardResponse
 import com.example.poten.R
 import com.example.poten.Utils.RetrofitClient
+import com.example.poten.databinding.ActivityClubMyPageBinding
 import com.example.poten.dto.BoardForm
 import com.example.poten.dto.SessionResponse
 import com.example.poten.interfaces.BoardApi
@@ -46,6 +48,9 @@ class CreatePostActivity : AppCompatActivity() {
     lateinit var iv_uploadImg : ImageView
     lateinit var uploadPicUri: Uri
 
+    // back press
+    private lateinit var post_backArroy : ImageView
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +61,13 @@ class CreatePostActivity : AppCompatActivity() {
         btn_postSubmit = findViewById(R.id.btn_postSubmit)
         btn_uploadPostFile = findViewById(R.id.btn_uploadPostFile)
         iv_uploadImg = findViewById(R.id.iv_uploadImg)
+        post_backArroy = findViewById(R.id.post_backArroy)
+
+
+        // 뒤로 가기 버튼
+        post_backArroy.setOnClickListener(View.OnClickListener {
+            finish()
+        })
 
         // 사진 업로드 버튼 클릭
         btn_uploadPostFile.setOnClickListener(View.OnClickListener {

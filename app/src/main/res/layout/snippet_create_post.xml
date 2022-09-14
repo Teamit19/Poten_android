@@ -30,6 +30,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/post_backArroy"
                     android:layout_width="39dp"
                     android:layout_height="26dp"
                     android:layout_alignParentEnd="true"
