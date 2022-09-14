@@ -55,7 +55,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="마감임박"
-                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textColor="#2B2B2B"
                 android:textSize="20sp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -79,7 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="공고"
-                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
                     android:textSize="20sp" />
 
                 <Spinner
