@@ -26,6 +26,9 @@ data class BoardResponse (
     var pics : FileResponse ?= null,
     var createdTime: String? = null,
     var modifiedTime: String? = null,
+
+    var  heartsNum :Integer ?=null,
+    var  commentsNum :Integer ?=null,
 )
 
 
@@ -43,7 +46,11 @@ data class ClubResponse (
     var posters: List<PosterResponse>? = null,
     var members: List<UserResponse>? = null,
     var waitings: List<UserResponse>? = null,
-    var createdTime: String? = null
+    var createdTime: String? = null,
+
+    var  followersNum :Integer ?=null,
+    var  heartsNum :Integer ?=null,
+    var  membersNum :Integer ?=null,
 )
 
 data class BoolResponse(

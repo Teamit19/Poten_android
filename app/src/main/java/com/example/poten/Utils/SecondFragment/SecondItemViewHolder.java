@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.poten.Model.secondItem;
 import com.example.poten.R;
+import com.squareup.picasso.Picasso;
 
 public class SecondItemViewHolder extends RecyclerView.ViewHolder{
 
@@ -40,7 +41,11 @@ public class SecondItemViewHolder extends RecyclerView.ViewHolder{
         tvCommentCount.setText("" + SecondItem.getCommentCount());
         tvUsername.setText(SecondItem.getId());
         tvSubtitle.setText(SecondItem.getSubTitle());
+//        imgBackground.setImageResource(SecondItem.getFileName());
 
-        imgBackground.setImageResource(SecondItem.getImage());
+        // 게시물 사진 연결
+        Picasso.get()
+                .load("http://172.30.1.3:8080/files/images/"+ SecondItem.getFileName())
+                .into(imgBackground);
     }
 }

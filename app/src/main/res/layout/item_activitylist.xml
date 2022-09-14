@@ -4,20 +4,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
     </data>
-<androidx.cardview.widget.CardView
-
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="10dp"
     android:layout_gravity="center">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="200dp"
+        android:layout_height="290dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp">
         <RelativeLayout
             android:id="@+id/relLayout"
-            android:layout_width="160dp"
-            android:layout_height="180dp"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
             android:background="@drawable/round_nostroke">
+
 
             <RelativeLayout
                 android:id="@+id/rlmain"
@@ -30,8 +41,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="bottom"
-                    android:src="@drawable/activity_pic1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/activity_pic1" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -90,13 +101,13 @@
                 </RelativeLayout>
 
             </RelativeLayout>
-
         </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
         <RelativeLayout
-            android:layout_width="160dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/relLayout">
+            android:layout_below="@id/cv_inner">
 
             <TextView
                 android:id="@+id/usernmae"
@@ -122,5 +133,5 @@
         </RelativeLayout>
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>
 </layout>
