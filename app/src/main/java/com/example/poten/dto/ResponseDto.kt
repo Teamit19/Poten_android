@@ -10,8 +10,7 @@ data class BoardResponse (
     var content: String? = null,
     var hearts: List<HeartBoardResponse>? = null,
     var comment: List<CommentResponse>? = null,
-
-    //    private List<FileEntity> pics;  // <<TODO>>
+    var pics : FileResponse ?= null,
     var createdTime: String? = null,
     var modifiedTime: String? = null
 )
@@ -34,7 +33,14 @@ data class ClubResponse (
     var createdTime: String? = null
 )
 
+data class BoolResponse(
+    var result: Boolean? = null
+)
 
+
+data class FileResponse (
+    var fileName: String? = null,
+)
 data class CommentResponse (
     var commentId: Long? = null,
     var writer: UserResponse? = null,

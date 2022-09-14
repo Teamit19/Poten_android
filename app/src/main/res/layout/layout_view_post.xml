@@ -112,7 +112,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="0dp">
 
-            <com.example.poten.Utils.SquareImageView
+            <ImageView
                 android:id="@+id/post_images"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

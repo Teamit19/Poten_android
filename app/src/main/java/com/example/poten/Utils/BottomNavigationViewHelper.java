@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 
 import com.example.poten.MainActivity;
+import com.example.poten.MyPage.ClubMyPageActivity;
 import com.example.poten.R;
+import com.example.poten.Search.SearchActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -40,13 +42,13 @@ public class BottomNavigationViewHelper {
                         break;
 
                     case R.id.ic_search:
-                        Intent intent3 = new Intent(context, MainActivity.class);//ACTIVITY_NUM = 2
+                        Intent intent3 = new Intent(context, SearchActivity.class);//ACTIVITY_NUM = 2
                         context.startActivity(intent3);
                         callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;
 
                     case R.id.ic_mypage:
-                        Intent intent4 = new Intent(context, MainActivity.class);//ACTIVITY_NUM = 3
+                        Intent intent4 = new Intent(context, ClubMyPageActivity.class);//ACTIVITY_NUM = 3
                         context.startActivity(intent4);
                         callingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         break;

@@ -42,7 +42,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 
 
-
 class MainActivity : AppCompatActivity() {
     val PERM_Album = 101
     val REQUEST_STORAGE = 80
@@ -169,6 +168,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
     }
+
     fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = MediaStore.Images.Media.CONTENT_TYPE
@@ -300,7 +300,7 @@ class MainActivity : AppCompatActivity() {
                 if (response?.isSuccessful) {
                     Toast.makeText(getApplicationContext(), "File Uploaded Successfully...", Toast.LENGTH_LONG).show();
                     Log.d("레트로핏 결과2",""+response?.body()?.content)
-                    Glide.with(this@MainActivity).load("http://192.168.35.193:8080/files/images/696e3efa-c5a2-4df7-8e79-39765e95f683_test.png").into(imageView2)
+                    Glide.with(this@MainActivity).load("http://192.168.35.193:8080/"+response?.body()?.content).into(imageView2)
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Some error occurred...", Toast.LENGTH_LONG).show();

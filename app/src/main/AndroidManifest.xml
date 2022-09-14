@@ -17,11 +17,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.POTEN"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Board.CreatePostActivity"
             android:exported="false" />
+        <activity
+            android:name=".MyPage.ClubLeaderPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Search.SearchActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".MyPage.ClubMyPageActivity"
             android:exported="false" />
