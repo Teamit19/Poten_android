@@ -24,6 +24,7 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.poten.Board.HomeActivity
 import com.example.poten.MyPage.ClubMyPageActivity
+import com.example.poten.Notice.NoticeActivity
 import com.example.poten.databinding.ActivityMainBinding
 import com.example.poten.dto.Test2
 import com.example.poten.dto.Test
@@ -118,7 +119,10 @@ class MainActivity : AppCompatActivity() {
 //        })
 
         button3.setOnClickListener(View.OnClickListener {
-            uploadPic(uriTest)
+            val intent1 = Intent(this, NoticeActivity::class.java) //ACTIVITY_NUM = 0
+
+            startActivity(intent1)
+//            uploadPic(uriTest)
         })
 
 
