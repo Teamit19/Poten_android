@@ -30,20 +30,31 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
     private lateinit var searchView : SearchView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        viewPager = findViewById(R.id.viewpager)
-        setupViewPager(viewPager)
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_view, SearchFragment1()).commit()
+        //viewPager = findViewById(R.id.viewpager)
+        //setupViewPager(viewPager)
 
-        tabLayout = findViewById(R.id.tabLayout)
-        tabLayout.setupWithViewPager(viewPager)
+        //tabLayout = findViewById(R.id.tabLayout)
+        //tabLayout.setupWithViewPager(viewPager)
 
         searchView = findViewById(R.id.searchview)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 Log.d("TAG", "검색 처리됨")
+                println("검색 결과:  " + query)
+                val bundle: Bundle = Bundle()
+                var frag2 = SearchFragment2()
+                bundle.putString("result", query)
+                frag2.arguments = bundle
+
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragment_view, frag2).commit()
+
                 return false;
             }
 
