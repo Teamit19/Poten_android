@@ -28,12 +28,14 @@ interface BoardApi {
     @GET("boards/interest")
     fun getBoardByInterest(): Call<BoardResponseList>
 
+    @GET("boards/club/{clubId}")
+    fun getBoardByClub(@Path("clubId") clubId: Long,): Call<BoardResponseList>
+
 //
 //    @GET("boards/{boardId}")
 //    fun getBoard(): Call<Test>
 //
-//    @GET("boards/club/{clubId}")
-//    fun getBoardByClub(): Call<Test>
+
 //
 //    @GET("boards/interest")
 //    fun getBoardByInterest(): Call<Test>

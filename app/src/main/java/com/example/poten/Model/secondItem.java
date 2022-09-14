@@ -2,14 +2,14 @@ package com.example.poten.Model;
 
 public class secondItem {
     private String id;
-    private int image;
+    private String fileName;
     private int likeCount;
     private int commentCount;
     private String subtitle;
 
-    public secondItem(String id, int image, int likeCount, int commentCount, String subtitle){
+    public secondItem(String id, String fileName, int likeCount, int commentCount, String subtitle){
         this.id = id;
-        this.image = image;
+        this.fileName = fileName;
         this.likeCount = likeCount;
         this.commentCount = commentCount;
         this.subtitle = subtitle;
@@ -19,9 +19,13 @@ public class secondItem {
 
     public void setTitle(String id) {this.id = id;}
 
-    public int getImage() {return image;}
+    public String getFileName() {
+        return fileName;
+    }
 
-    public void setImage(int image) {this.image = image;}
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public int getLikeCount() {return likeCount;}
 
