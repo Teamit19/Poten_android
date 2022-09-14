@@ -1,25 +1,29 @@
-package com.example.poten.Notice
+package com.example.poten
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.example.poten.R
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.Utils.BottomNavigationViewHelper
-import com.example.poten.databinding.ActivityLoginBinding
-import com.example.poten.databinding.ActivityNoticeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class NoticeActivity : AppCompatActivity() {
-    private val mContext: Context = this@NoticeActivity
-    private val ACTIVITY_NUM = 1
-    private lateinit var binding: ActivityNoticeBinding
+class MyPageActivity: AppCompatActivity(){
+    private val mContext: Context = this@MyPageActivity
+    private val ACTIVITY_NUM = 3
+    lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notice)
-        binding= ActivityNoticeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_mypage)
+
+        button = findViewById(R.id.clubProfile)
+        button.setOnClickListener(View.OnClickListener {
+            val intent1 = Intent(this, ClubMyPageActivity::class.java) //ACTIVITY_NUM = 0
+            startActivity(intent1)
+        })
 
         setupBottomNavigationView()
     }

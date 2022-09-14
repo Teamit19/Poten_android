@@ -24,6 +24,7 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.poten.Board.HomeActivity
 import com.example.poten.MyPage.ClubMyPageActivity
+import com.example.poten.Utils.BottomNavigationViewHelper
 import com.example.poten.Notice.NoticeActivity
 import com.example.poten.databinding.ActivityMainBinding
 import com.example.poten.dto.Test2
@@ -43,7 +44,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
     val PERM_Album = 101
     val REQUEST_STORAGE = 80
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
