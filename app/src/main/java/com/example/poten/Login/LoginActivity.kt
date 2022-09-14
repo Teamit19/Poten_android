@@ -7,6 +7,8 @@ import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.poten.MainActivity
 import com.example.poten.MyPage.ClubMyPageActivity
+import com.example.poten.Board.HomeActivity
+import com.example.poten.Board.model.UserResponse
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.dto.SessionResponse
@@ -14,7 +16,6 @@ import com.example.poten.interfaces.UserApi
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,8 +29,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val keyHash = Utility.getKeyHash(this)
-        Log.d("Hash", keyHash)
+//        val keyHash = Utility.getKeyHash(this)
+//        Log.d("Hash", keyHash)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -77,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
                                 Log.i("LOGIN", "api 성공}"+response.body())
                                 val sessionId = response.body()?.sessionId.toString()
                                 setSession(sessionId)
+                                checkSignup()
                             }
 
                             override fun onFailure(call: Call<SessionResponse>, t: Throwable) {
@@ -84,10 +86,10 @@ class LoginActivity : AppCompatActivity() {
                             }
 
                         })                        
-                        val intent = Intent(this, SelectAreaActivity::class.java)
-                        //val intent = Intent(this, ClubMyPageActivity::class.java)
-                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                        finish()
+//                        val intent = Intent(this, SelectAreaActivity::class.java)
+//                        //val intent = Intent(this, ClubMyPageActivity::class.java)
+//                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                        finish()
                     }
                 }
             } else {

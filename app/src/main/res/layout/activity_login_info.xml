@@ -60,14 +60,15 @@
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/input_id"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_email"
             android:layout_width="match_parent"
             android:layout_height="41dp"
+            android:enabled="false"
             android:layout_below="@id/text4"
             android:layout_marginTop="8dp"
             android:background="@drawable/input_background"
-            android:hint="아이디 입력"
+            android:hint="이메일 입력"
             android:inputType="textEmailAddress"
             android:textColor="#ACACAC"
             android:textSize="13sp" />
@@ -76,7 +77,7 @@
             android:id="@+id/text5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/input_id"
+            android:layout_below="@id/input_email"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="16dp"
             android:text="닉네임"
@@ -84,16 +85,17 @@
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/input_password"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_below="@id/text5"
             android:layout_marginTop="8dp"
             android:background="@drawable/input_background"
-            android:hint="비밀번호 입력"
+            android:hint="닉네임 입력"
+            android:textStyle="bold"
             android:inputType="text"
-            android:textColor="#ACACAC"
+            android:textColor="#2B2B2B"
             android:textSize="13sp" />
 
 
@@ -105,10 +107,10 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/input_background"
         android:backgroundTint="#F32323"
-        android:layout_marginHorizontal="10dp"
         android:padding="12dp"
         android:text="다음"
         android:textColor="@color/white"
