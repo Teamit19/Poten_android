@@ -1,18 +1,26 @@
 package com.example.poten.Login
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.poten.Board.model.BoardResponse
+import com.example.poten.Board.model.BoolResponse
+import com.example.poten.MainActivity
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.databinding.ActivityLoginAreaBinding
 import com.example.poten.databinding.ActivityLoginKeywordBinding
 import com.example.poten.interfaces.UserApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SelectKeywordActivity : AppCompatActivity() {
     private lateinit var binding:ActivityLoginKeywordBinding
     var datas = mutableListOf<String>()
-    var clickPosition = mutableListOf<Int>()
+    var clickInterest = mutableListOf<String>()
 
     var retrofit = RetrofitClient.create(UserApi::class.java, RetrofitClient.getAuth())
 
@@ -25,8 +33,27 @@ class SelectKeywordActivity : AppCompatActivity() {
         initRecycler()
 
         binding.btnNext.setOnClickListener {
-
+            postInterest(clickInterest)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
+
+    }
+
+    private fun postInterest(interests: List<String>) {
+        var hashMap=HashMap<String, List<String>>()
+        hashMap.put("interestList", interests)
+        retrofit.postInterest(hashMap).enqueue(object : Callback<BoolResponse> {
+            override fun onResponse(call: Call<BoolResponse>, response: Response<BoolResponse>) {
+                Log.i("Interest", "postInterest 성공"+ response.body().toString())
+
+
+            }
+
+            override fun onFailure(call: Call<BoolResponse>, t: Throwable) {
+                Log.e("Interest", "postInterest실패"+t.message.toString())
+            }
+        })
 
     }
 
@@ -35,7 +62,7 @@ class SelectKeywordActivity : AppCompatActivity() {
         areaAdapter.datas=datas
         areaAdapter.setItemClickListener(object : AreaAdapter.OnItemClickListener {
             override fun onClick(v: View, position: Int) {
-                clickPosition.add(position)
+                clickInterest.add(datas[position])
             }
 
         })

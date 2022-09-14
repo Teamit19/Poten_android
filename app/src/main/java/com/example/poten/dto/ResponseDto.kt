@@ -34,6 +34,10 @@ data class ClubResponse (
     var createdTime: String? = null
 )
 
+data class BoolResponse(
+    var result: Boolean? = null
+)
+
 
 data class CommentResponse (
     var commentId: Long? = null,
