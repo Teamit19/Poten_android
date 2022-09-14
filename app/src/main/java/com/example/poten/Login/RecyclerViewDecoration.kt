@@ -2,7 +2,6 @@ package com.example.poten.Login
 
 import android.graphics.Rect
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewDecoration(var count:Int) : RecyclerView.ItemDecoration() {
