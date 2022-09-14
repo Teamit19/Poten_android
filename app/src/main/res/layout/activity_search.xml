@@ -6,55 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Search.SearchActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:id="@+id/relLayoutParent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="검색창"/>
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchview"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
 
-<!--            <androidx.core.widget.NestedScrollView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:fillViewport="true">-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:orientation="vertical">-->
-
-
-<!--                    <com.google.android.material.tabs.TabLayout-->
-<!--                    android:id="@+id/tabLayout"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/searchview"-->
-<!--                    app:tabGravity="fill"-->
-<!--                    app:tabMode="fixed" />-->
-
-<!--                <androidx.viewpager.widget.ViewPager-->
-<!--                    android:id="@+id/viewpager"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />-->
-<!--                </LinearLayout>-->
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:text="검색창"/>
 
 
-<!--            </androidx.core.widget.NestedScrollView>-->
+            <!-- 검색창 -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchview"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="1dp"
+                app:theme="@style/AppSearchView"
+                app:queryHint="나의 포텐을 터뜨릴 동아리는 어디?"
+                app:iconifiedByDefault="false"
+                android:background="@drawable/rectangle_173"/>
 
+            <FrameLayout
+                android:id="@+id/fragment_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/searchview" />
+
+
+        </RelativeLayout>
         <!-- bottom navigation -->
-        <include layout="@layout/layout_bottom_navigation_view"
-            app:layout_constraintTop_toBottomOf="@+id/viewpager"/>
+        <include layout="@layout/layout_bottom_navigation_view" />
+<!--            app:layout_constraintTop_toBottomOf="@+id/fragment_view"/>-->
 
     </RelativeLayout>
 
