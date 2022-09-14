@@ -53,7 +53,7 @@ public void onViewCreated(View view, Bundle savedInstanceState) {
 
         adapter = new RVAdapter(mNoticeItem);
         recyclerView.setAdapter(adapter);
-        }
+}
 
 @Override
 public boolean onQueryTextSubmit(String s) {
