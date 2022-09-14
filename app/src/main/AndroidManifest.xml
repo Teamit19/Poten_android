@@ -22,7 +22,9 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Board.CreatePostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Board.HomeActivity"
+            />
         <activity
             android:name=".MyPage.ClubLeaderPageActivity"
             android:exported="false" />

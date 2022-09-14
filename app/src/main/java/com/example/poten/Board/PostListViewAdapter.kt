@@ -1,6 +1,7 @@
 package com.example.poten.Board
 
 import android.content.Context
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.poten.Board.model.BoardResponse
+import com.example.poten.Board.model.HeartBoardResponse
 import com.example.poten.R
 import com.example.poten.Utils.SquareImageView
 import com.squareup.picasso.Picasso
@@ -37,14 +39,17 @@ class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <
         holder.speech_count.text = postList[position].comment?.size.toString()
         holder.image_caption.text = postList[position].content.toString()
 
+        // 게시물 사진 연결
         Picasso.get()
             .load("http://172.30.1.3:8080/files/images/"+ postList[position].pics?.fileName)
             .into(holder.post_images);
 
         // 하트 연결
-//        holder.image_heart.setOnClickListener(
-////            onHeartClicked()
-//        )
+        holder.image_heart.setOnClickListener{
+//            itemClickListener.onClick(it, position, postList[position])
+            holder.image_heart.setColorFilter(Color.parseColor("#F32323"))
+            holder.heart_count.text = (postList[position].hearts?.size?.plus(1)).toString()
+        }
 
     }
 
@@ -69,6 +74,19 @@ class PostListViewAdapter(private val context: Context) : RecyclerView.Adapter <
         val speech_bubble = itemView.findViewById<ImageView>(R.id.speech_bubble)
     }
 
+
+    // (2) 리스너 인터페이스
+    interface OnItemClickListener {
+        fun onClick(v: View, position: Int, b : BoardResponse){
+
+        }
+    }
+    // (3) 외부에서 클릭 시 이벤트 설정
+    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
+    }
+    // (4) setItemClickListener로 설정한 함수 실행
+    private lateinit var itemClickListener : OnItemClickListener
 
 
 }

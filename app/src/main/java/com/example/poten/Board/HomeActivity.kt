@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.Board.model.BoardResponse
 import com.example.poten.Board.model.BoardResponseList
+import com.example.poten.Login.AreaAdapter
 import com.example.poten.R
 import com.example.poten.Utils.BottomNavigationViewHelper
 import com.example.poten.Utils.RetrofitClient
@@ -96,6 +97,13 @@ class HomeActivity : AppCompatActivity() {
         // 리사이클러뷰 어댑터에 화면에 띄울 데이터를 넘긴다.
         rv_postList = findViewById<RecyclerView>(R.id.home_recyView) as RecyclerView
         adapter = PostListViewAdapter(getApplicationContext());
+        // 하트 리스너
+        adapter.setItemClickListener(object : PostListViewAdapter.OnItemClickListener {
+            override fun onClick(v: View, position: Int,  boardResponse: BoardResponse) {
+//                Log.i("HEART", "setItemClickListener" + boardResponse.toString())
+//                onHeartClicked(com_postId)
+            }
+        })
 
         // 피드 작성 _ 플로팅 버튼 연결
         floatBtn.setOnClickListener{
@@ -141,7 +149,7 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
-    // (스피너 설정 1)서버에서 팔로잉한 피드 불러오기
+    // (스피너 설정 1)서버에서 관심사 피드 불러오기
     private fun getBoardByInterest() {
         Log.i("BOARD", "getBoardByInterest 호출됨")
         var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
@@ -190,6 +198,8 @@ class HomeActivity : AppCompatActivity() {
                 rv_postList.layoutManager = manager
                 rv_postList.setHasFixedSize(true)
                 rv_postList.adapter = adapter
+
+
                 adapter.setListData(postList)
             }
 
@@ -198,6 +208,10 @@ class HomeActivity : AppCompatActivity() {
             }
         })
     }
+
+//    // 하트 누르기 처리
+//    private fun onHeartClicked(boardResponse: BoardResponse) {
+//    }
 
     private fun setupBottomNavigationView() {
         //Log.d(HomeActivity.TAG, "setupBottomNavigationView: setting up BottomNavigationView")

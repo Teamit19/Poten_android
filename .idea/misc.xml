@@ -73,6 +73,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/drawable/sh_white_btn.xml" value="0.243" />
         <entry key="..\:/project/Poten_android/app/src/main/res/drawable/spinner_design.xml" value="0.258" />
         <entry key="..\:/project/Poten_android/app/src/main/res/drawable/white_grey_border_bottom.xml" value="0.1235" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_club_leader_page.xml" value="0.4" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_club_my_page.xml" value="0.1125" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_create_post.xml" value="0.2" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/activity_home.xml" value="0.264" />
@@ -102,7 +103,7 @@
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_create_post.xml" value="0.2" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_mypage_setting.xml" value="0.20820863616930313" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_top_tabs.xml" value="0.1" />
-        <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_view_post.xml" value="0.136" />
+        <entry key="..\:/project/Poten_android/app/src/main/res/layout/layout_view_post.xml" value="0.4" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_center_edit_profile.xml" value="0.1125" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_create_post.xml" value="0.152" />
         <entry key="..\:/project/Poten_android/app/src/main/res/layout/snippet_edit_profile.xml" value="0.24818840579710144" />
