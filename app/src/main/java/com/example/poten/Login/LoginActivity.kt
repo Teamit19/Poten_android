@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.webkit.CookieManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.poten.MainActivity
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.Board.HomeActivity
 import com.example.poten.Board.model.UserResponse
 import com.example.poten.Utils.RetrofitClient
@@ -84,9 +86,11 @@ class LoginActivity : AppCompatActivity() {
                                 Log.i("LOGIN", "api 실패"+t.message.toString())
                             }
 
-                        })
-
-
+                        })                        
+//                        val intent = Intent(this, SelectAreaActivity::class.java)
+//                        //val intent = Intent(this, ClubMyPageActivity::class.java)
+//                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+//                        finish()
                     }
                 }
             } else {
@@ -102,39 +106,6 @@ class LoginActivity : AppCompatActivity() {
         cm.setCookie(RetrofitClient.BASE_URL, sessionId)
         Log.d("sessionId From Cm", cm.getCookie(RetrofitClient.BASE_URL))
         Log.d("sessionId From Server", sessionId)
-    }
-
-    fun setNextBtn(signUpState:Boolean) {
-        if (signUpState) {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-            finish()
-        } else {
-            val intent = Intent(this, LoginInfoActivity::class.java)
-            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-            finish()
-        }
-    }
-
-    fun checkSignup() {
-        var retrofitAuth = RetrofitClient.create(UserApi::class.java, RetrofitClient.getAuth())
-
-        retrofitAuth.getUserInfo().enqueue(object : Callback<UserResponse> {
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                Log.i("User", "getUserInfo 성공"+ response.body().toString())
-                if (response.body()?.name?.length!! > 0) {
-                    Log.i("User", "name null 여부 확인 성공")
-                    setNextBtn(true)
-                }else{
-                    setNextBtn(false)
-                }
-
-            }
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                Log.e("User", "getUserInfo 실패"+t.message.toString())
-            }
-        })
-
     }
 
 
