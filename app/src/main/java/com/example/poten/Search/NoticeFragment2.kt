@@ -1,4 +1,4 @@
-package com.example.poten.Utils.SearchFragment
+package com.example.poten.Search
 
 import android.content.Context
 import android.os.Bundle
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.Board.model.PosterResponse
 import com.example.poten.Board.model.PosterResponseList
 import com.example.poten.R
-import com.example.poten.Search.PosterAdapter
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.interfaces.PosterApi
 import retrofit2.Call

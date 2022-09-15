@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.R
-import com.example.poten.Utils.SearchFragment.ClubFragment
-import com.example.poten.Utils.SearchFragment.NoticeFragment2
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
@@ -17,6 +15,7 @@ class SearchFragment2 : Fragment() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager
+    private lateinit var result:String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +23,7 @@ class SearchFragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         arguments?.let {
-            val result = it.getString("result")
+            result = it.getString("result").toString()
             println("Fragment로 넘어옴" + result)
         }
         var v: View = inflater.inflate(R.layout.fragment_search_2, container, false)
@@ -37,9 +36,16 @@ class SearchFragment2 : Fragment() {
     }
 
     fun setupViewPager(viewPager: ViewPager){
+        val bundle = Bundle()
+        bundle.putString("keyword", result)
+
+        var fragment2 = SearchClubFragment()
+        fragment2.arguments = bundle
+
+
         var adapter : SearchViewPagerAdapter = SearchViewPagerAdapter(requireActivity().supportFragmentManager)
         adapter.addFragment(NoticeFragment2(), "공고")
-        adapter.addFragment(ClubFragment(), "동아리")
+        adapter.addFragment(fragment2, "동아리")
 
         viewPager.adapter = adapter
     }
