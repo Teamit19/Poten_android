@@ -1,5 +1,19 @@
 package com.example.poten.Board.model
 
+import android.widget.ImageView
+import android.widget.TextView
+import com.example.poten.R
+import de.hdodenhof.circleimageview.CircleImageView
+
+
+data class PopularClubResponse (
+    var content: String? = null,
+    var clubname: String? = null,
+    var tag: String? = null,
+    var dday: String? = null,
+    var profile : String?= null,
+    var post : String?= null,
+)
 
 
 data class BoardResponse (
@@ -12,6 +26,9 @@ data class BoardResponse (
     var pics : FileResponse ?= null,
     var createdTime: String? = null,
     var modifiedTime: String? = null,
+
+    var  heartsNum :Integer ?=null,
+    var  commentsNum :Integer ?=null,
 )
 
 
@@ -29,7 +46,11 @@ data class ClubResponse (
     var posters: List<PosterResponse>? = null,
     var members: List<UserResponse>? = null,
     var waitings: List<UserResponse>? = null,
-    var createdTime: String? = null
+    var createdTime: String? = null,
+
+    var  followersNum :Integer ?=null,
+    var  heartsNum :Integer ?=null,
+    var  membersNum :Integer ?=null,
 )
 
 data class BoolResponse(

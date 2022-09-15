@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Search.SearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/relLayoutParent">
+
+        <TextView
+            android:id="@+id/search_text2"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="35dp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:text="인기 검색어"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popular_search_word"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:layout_alignParentTop="true"
+            android:id="@+id/search_text3"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="150dp"
+            android:gravity="center_vertical"
+            android:text="인기 동아리"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_text3"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="90dp">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            app:tabBackground="@drawable/page_dot"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp">
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -219,7 +219,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
-                                android:text="0원"
+                                android:text="10000원"
                                 android:textColor="@color/black"
                                 android:textSize="13sp"
                                 app:layout_constraintStart_toEndOf="@+id/textView1"

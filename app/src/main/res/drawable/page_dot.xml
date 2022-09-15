@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item android:drawable="@drawable/rectangle_246"-->
+<!--        android:state_selected="true"/>-->
+<!--    <item android:drawable="@drawable/rectangle_248" />-->
+    <item android:state_selected="true">
+        <shape
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thickness="5dp"
+            android:useLevel="false">
+            <solid android:color="#474545"/>
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thickness="3dp"
+            android:useLevel="false">
+            <solid android:color="@color/grey"/>
+        </shape>
+    </item>
+</selector>

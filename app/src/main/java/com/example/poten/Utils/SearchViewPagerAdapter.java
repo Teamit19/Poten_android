@@ -28,4 +28,5 @@ public class SearchViewPagerAdapter extends FragmentStatePagerAdapter {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }
+
 }

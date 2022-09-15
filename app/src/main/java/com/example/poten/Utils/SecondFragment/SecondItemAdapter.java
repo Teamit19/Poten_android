@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.example.poten.Model.secondItem;
 import com.example.poten.R;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -55,7 +56,12 @@ public class SecondItemAdapter extends RecyclerView.Adapter<SecondItemAdapter.My
         holder.tvcomment_count.setText(itemList.getCommentCount());
         holder.tvusername.setText(itemList.getId());
         holder.tvsubtitle.setText(itemList.getSubTitle());
-        //Glide.with(mContext).load(itemList.getImage()).into(holder.layout);
+
+        // 게시물 사진 연결
+        Picasso.get()
+                .load("http://172.30.1.3:8080/files/images/"+ itemList.getFileName())
+            .into(holder.imgBackground);
+
         holder.layout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -71,11 +77,12 @@ public class SecondItemAdapter extends RecyclerView.Adapter<SecondItemAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvheart_count, tvcomment_count, tvusername, tvsubtitle;
-        public ImageView imgHeart;
+        public ImageView imgHeart, imgBackground;
         RelativeLayout layout;
 
         public MyViewHolder(View view) {
             super(view);
+            imgBackground = (ImageView) view.findViewById(R.id.imgBackground);
             tvheart_count = (TextView) view.findViewById(R.id.heart_count);
             tvcomment_count = (TextView) view.findViewById(R.id.speech_count);
             tvusername = (TextView) view.findViewById(R.id.username);
