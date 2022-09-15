@@ -1,6 +1,7 @@
 package com.example.poten.Utils;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,11 @@ import com.bumptech.glide.Glide;
 import com.example.poten.Model.memberList;
 import com.example.poten.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MemberListAdapter extends RecyclerView.Adapter<MemberListAdapter.MyViewHolder> {
 
@@ -42,8 +47,13 @@ public class MemberListAdapter extends RecyclerView.Adapter<MemberListAdapter.My
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         memberList memberList = albumList.get(position);
         holder.tvTitle.setText(memberList.getId());
+        holder.imgProfile.setImageResource(memberList.getImage());
 
-        Glide.with(mContext).load(memberList.getImage()).into(holder.imgProfile);
+        // 부장 마커 표시
+        if(position == 0){
+            holder.imgLeaderitem.setVisibility(View.VISIBLE);
+        }
+        
         holder.layout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -60,13 +70,14 @@ public class MemberListAdapter extends RecyclerView.Adapter<MemberListAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
-        public ImageView imgProfile;
+        public CircleImageView imgProfile, imgLeaderitem;
         ConstraintLayout layout;
 
         public MyViewHolder(View view) {
             super(view);
             tvTitle = (TextView) view.findViewById(R.id.tvId);
-            imgProfile = (ImageView) view.findViewById(R.id.imgitem);
+            imgProfile = (CircleImageView) view.findViewById(R.id.imgitem);
+            imgLeaderitem = (CircleImageView) view.findViewById(R.id.imgLeaderitem);
             layout = (ConstraintLayout) view.findViewById(R.id.rlmain);
         }
     }
