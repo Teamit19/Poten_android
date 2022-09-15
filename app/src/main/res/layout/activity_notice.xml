@@ -55,7 +55,9 @@
                 android:layout_below="@id/recycleView_Category"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="23dp"
-                android:text="마감임박"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.03"
+                android:text="마감 임박"
                 android:textColor="#2B2B2B"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -65,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv1"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
@@ -82,6 +84,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="공고"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.03"
+                    android:fontFamily="@font/inter_semibold"
                     android:textColor="#2B2B2B"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -99,7 +104,7 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
-                android:layout_width="250dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_layout_1"
                 android:layout_marginLeft="20dp"

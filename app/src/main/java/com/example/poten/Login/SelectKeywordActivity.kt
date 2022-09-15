@@ -82,7 +82,7 @@ class SelectKeywordActivity : AppCompatActivity() {
     fun initializelist() {
         var arr= mutableListOf<String>("연기", "글쓰기", "댄스", "사진", "전시회", "힙합", "민속놀이", "영화", "밴드", "악기", "연출", "크리에이터", "보드게임")
         category.put("문화/예술", arr)
-        arr= mutableListOf<String>("봉사활동", "요리", "베이킹 수업")
+        arr= mutableListOf<String>("봉사활동", "요리", "베이킹")
         category.put("봉사", arr)
         arr= mutableListOf<String>("IT", "프로그래밍")
         category.put("IT", arr)
@@ -95,7 +95,7 @@ class SelectKeywordActivity : AppCompatActivity() {
 
         with(datas) {
             add("IT")
-            add("크리에이터")
+            add("자유토론")
             add("요리")
             add("디자인")
             add("프로그래밍")

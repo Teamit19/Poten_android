@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.R
-import com.example.poten.databinding.ItemCategoryBinding
+import com.example.poten.databinding.ItemNoticeCategoryBinding
 
 class SingleAdapter(
     private val context: Context
@@ -14,7 +14,7 @@ class SingleAdapter(
     var list= mutableListOf<String>()
     private var clickState: BooleanArray = BooleanArray(7, {false})
 
-    private lateinit var binding: ItemCategoryBinding
+    private lateinit var binding: ItemNoticeCategoryBinding
     private var onItemClickListener: OnItemClickListener? = null
 
     private var selectedPosition = 0
@@ -29,7 +29,7 @@ class SingleAdapter(
     }
 
     inner class SelectSingleItemViewHolder(
-        private val binding: ItemCategoryBinding
+        private val binding: ItemNoticeCategoryBinding
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: View) {
             binding.tvItemName.text = list[adapterPosition].toString()
@@ -55,7 +55,7 @@ class SingleAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SelectSingleItemViewHolder {
-        binding = ItemCategoryBinding.inflate(LayoutInflater.from(context), parent, false)
+        binding = ItemNoticeCategoryBinding.inflate(LayoutInflater.from(context), parent, false)
         return SelectSingleItemViewHolder(binding)
     }
 
@@ -65,12 +65,12 @@ class SingleAdapter(
 
     override fun getItemCount(): Int = list.size
 
-    private fun ItemCategoryBinding.setChecked() {
+    private fun ItemNoticeCategoryBinding.setChecked() {
         tvItemName.setBackgroundResource(R.drawable.round_click)
         tvItemName.setTextColor(Color.WHITE)
     }
 
-    private fun ItemCategoryBinding.setUnchecked() {
+    private fun ItemNoticeCategoryBinding.setUnchecked() {
         tvItemName.setBackgroundResource(R.drawable.round)
         tvItemName.setTextColor(Color.parseColor("#525252"))
     }
