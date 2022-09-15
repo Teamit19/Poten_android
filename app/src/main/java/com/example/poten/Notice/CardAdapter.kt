@@ -31,7 +31,7 @@ class CardAdapter(private val context: Context) : RecyclerView.Adapter<CardAdapt
         holder.tv_title.text=datas[position].club?.clubName
         holder.tv_subtitle.text=datas[position].content
         holder.tv_dday.text="D-"+datas[position].dday
-        holder.tv_hashtag.text="#"+datas[position].club?.field
+        holder.tv_hashtag.text="#"+datas[position].club?.region
         holder.tv_hashtag2.text="#"+datas[position].club?.activityType
 //        holder.relLayout1.setOnClickListener {
 //
