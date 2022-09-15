@@ -22,91 +22,93 @@
             android:id="@+id/cv_inner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp">
-        <RelativeLayout
-            android:id="@+id/relLayout"
-            android:layout_width="170dp"
-            android:layout_height="200dp"
-            android:background="@drawable/round_nostroke">
-
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
 
             <RelativeLayout
-                android:id="@+id/rlmain"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom">
+                android:id="@+id/relLayout"
+                android:layout_width="180dp"
+                android:layout_height="175dp"
+                android:background="@drawable/round_nostroke">
 
-                <ImageView
-                    android:id="@+id/imgBackground"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="bottom"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/activity_pic1" />
 
                 <RelativeLayout
+                    android:id="@+id/rlmain"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@drawable/round_bottom"
-                    android:layout_alignParentBottom="true"
+                    android:layout_height="match_parent"
                     android:gravity="bottom">
 
-                    <RelativeLayout
-                        android:id="@+id/heartLayout"
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/imgBackground"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="6dp">
+                        android:gravity="bottom"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/activity_pic1" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/round_bottom"
+                        android:gravity="bottom">
+
+                        <RelativeLayout
+                            android:id="@+id/heartLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="6dp">
+
+                            <ImageView
+                                android:id="@+id/image_heart"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="12dp"
+                                android:src="@drawable/ic_feed"
+                                android:visibility="visible"
+                                app:tint="#DFDFDF" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/heart_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/heartLayout"
+                            android:text="411"
+                            android:textColor="@color/white"
+                            android:textSize="9sp" />
 
                         <ImageView
-                            android:id="@+id/image_heart"
+                            android:id="@+id/speech_bubble"
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:layout_centerInParent="true"
+                            android:layout_centerVertical="true"
                             android:layout_marginLeft="12dp"
-                            android:src="@drawable/ic_feed"
-                            android:visibility="visible"
-                            app:tint="#DFDFDF" />
+                            android:layout_toRightOf="@+id/heart_count"
+                            android:src="@drawable/ic_comment"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/speech_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_toRightOf="@id/speech_bubble"
+                            android:text="411"
+                            android:textColor="@color/white"
+                            android:textSize="9sp" />
                     </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/heart_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/heartLayout"
-                        android:text="411"
-                        android:textColor="@color/white"
-                        android:textSize="9sp" />
-
-                    <ImageView
-                        android:id="@+id/speech_bubble"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="12dp"
-                        android:layout_toRightOf="@+id/heart_count"
-                        android:src="@drawable/ic_comment"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:id="@+id/speech_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="6dp"
-                        android:layout_toRightOf="@id/speech_bubble"
-                        android:text="411"
-                        android:textColor="@color/white"
-                        android:textSize="9sp" />
                 </RelativeLayout>
-
             </RelativeLayout>
-        </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <RelativeLayout
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
             android:layout_below="@id/cv_inner">
 
             <TextView

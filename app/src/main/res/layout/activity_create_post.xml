@@ -13,10 +13,14 @@
 
     </FrameLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relLayoutParent">
+
 
         <!-- top toolbar -->
         <RelativeLayout
@@ -56,22 +60,24 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="27dp"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="62dp"
                 android:layout_marginEnd="21dp"
                 app:srcCompat="@drawable/ic_rectangle173" />
 
             <EditText
                 android:id="@+id/et_postTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="800dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/imageView2"
                 android:layout_alignTop="@+id/imageView2"
-                android:fontFamily="@font/inter_medium"
+                android:layout_alignEnd="@+id/imageView2"
                 android:layout_alignBottom="@+id/imageView2"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
                 android:background="@android:color/transparent"
+                android:fontFamily="@font/inter_medium"
                 android:hint="동아리명을 입력해주세요"
                 android:textColor="#2B2B2B"
                 android:textSize="14sp" />
@@ -95,8 +101,10 @@
                 android:layout_height="286dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="27dp"
-                android:layout_marginTop="163dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="24dp"
                 app:srcCompat="@drawable/ic_rectangle_254" />
 
             <EditText
@@ -118,12 +126,12 @@
                 android:id="@+id/btn_postSubmit"
                 android:layout_width="330dp"
                 android:layout_height="55dp"
+                android:layout_below="@+id/iv_uploadImg"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="36dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="36dp"
                 android:stateListAnimator="@null"
                 android:text="등록하기" />
 
@@ -135,33 +143,31 @@
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="475dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="466dp"
+                android:layout_marginEnd="47dp"
                 android:background="@drawable/sh_white_btn"
                 android:drawableLeft="@drawable/ic_attach_btn_1"
-                android:paddingLeft="110dp"
-                android:paddingRight="100dp"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
                 android:text="이미지 첨부"
                 android:textColor="@color/black" />
 
             <ImageView
                 android:id="@+id/iv_uploadImg"
-                android:layout_width="wrap_content"
-                android:layout_height="134dp"
+                android:layout_width="800dp"
+                android:layout_height="200dp"
                 android:layout_below="@+id/btn_uploadPostFile"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
-                android:layout_marginBottom="99dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </RelativeLayout>
 
     </RelativeLayout>
-
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
