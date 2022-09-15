@@ -37,5 +37,6 @@ class MyPageActivity: AppCompatActivity(){
         val menu = bottomNavigationViewEx.menu
         val menuItem = menu.getItem(ACTIVITY_NUM)
         menuItem.isChecked = true
+        bottomNavigationViewEx.itemIconTintList = null
     }
 }

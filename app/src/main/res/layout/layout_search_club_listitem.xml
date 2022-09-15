@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:id="@+id/relLayout1"
         android:layout_width="match_parent"
-        android:layout_height="110dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:layout_marginTop="20dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/rectangle_163"
-            >
+            android:background="@drawable/rectangle_163">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_launcher_background"
-                app:civ_border_color="@color/black"
-                app:civ_border_width="0.5dp" />
+                android:src="@drawable/ic_launcher_background" />
 
             <RelativeLayout
                 android:id="@+id/rel_layout"
@@ -37,15 +35,17 @@
                     android:id="@+id/tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="#경기도 #온라인"
-                    android:textSize="12sp" />
+                    android:textColor="#ACACAC"
+                    android:textSize="11sp" />
 
                 <RelativeLayout
                     android:id="@+id/rel_layout2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tag">
+                    android:layout_below="@id/tag"
+                    android:layout_marginLeft="20dp">
 
                     <TextView
                         android:id="@+id/clubname"
@@ -53,27 +53,13 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/inter_bold"
                         android:maxLines="1"
                         android:text="한사랑 클라이밍회"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textColor="#2B2B2B"
+                        android:textSize="15sp" />
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/dday"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginLeft="10dp"-->
-<!--                        android:layout_toRightOf="@+id/clubname"-->
-<!--                        android:background="@drawable/round"-->
-<!--                        android:backgroundTint="#F3F3F3"-->
-<!--                        android:paddingHorizontal="12dp"-->
-<!--                        android:paddingVertical="3dp"-->
-<!--                        android:text="D-1"-->
-<!--                        android:textColor="#1E1E1E"-->
-<!--                        android:textSize="10sp" />-->
 
                 </RelativeLayout>
 
@@ -83,41 +69,42 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rel_layout2"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="한사랑 클라이밍회 부원 모집합니다.가나다라마바사"
-                    android:textColor="@color/black"
+                    android:textColor="#494949"
                     android:textSize="12sp" />
 
 
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="110dp">
+        android:layout_below="@+id/relLayout1"
+        android:layout_marginTop="8dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/follow"
             android:layout_width="160dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/white"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
             android:background="@drawable/rectangle_177"
-            android:text="팔로우" />
+            android:text="팔로우"
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/more"
             android:layout_width="160dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
             android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
             android:background="@drawable/rectangle_175"
             android:text="더보기"
             android:textColor="@color/black" />

@@ -1,22 +1,28 @@
 package com.example.poten.Search
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.Board.model.ClubResponse
 import com.example.poten.Board.model.PopularClubResponse
 import com.example.poten.Board.model.SearchClubResponse
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.R
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
 class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context) : RecyclerView.Adapter <SearchClubAdapter.CustomViewHolder>() {
     private var c =  context
+    private var follow_cnt = 0
+    private var cnt: MutableList<Int> = MutableList(clubList.size){0}
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -44,12 +50,28 @@ class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context
 
         holder.follow_btn.setOnClickListener(View.OnClickListener {
             println("follow")
-            holder.follow_btn.setTextColor(Color.GRAY)
-            holder.follow_btn.setBackgroundResource(R.drawable.rectangle_174)
+            if(cnt.get(position) == 0){
+                holder.follow_btn.setTextColor(Color.GRAY)
+                holder.follow_btn.setBackgroundResource(R.drawable.rectangle_174)
+                cnt[position] = 1
+            } else {
+                holder.follow_btn.setTextColor(Color.WHITE)
+                holder.follow_btn.setBackgroundResource(R.drawable.rectangle_177)
+                cnt[position] = 0
+            }
+
+
         })
 
         holder.more_btn.setOnClickListener(View.OnClickListener {
             println("more")
+            val intent1 = Intent(it.context, ClubMyPageActivity::class.java) //ACTIVITY_NUM = 0
+            intent1.putExtra("clubId", clubList[position].clubId); /*송신*/
+
+            it.context.startActivity(intent1)
+
+
+
         })
     }
 

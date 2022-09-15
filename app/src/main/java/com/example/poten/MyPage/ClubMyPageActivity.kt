@@ -9,16 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.Board.model.ClubResponse
 import com.example.poten.Model.memberList
-import com.example.poten.Notice.PosterFragment
 import com.example.poten.R
-import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.MemberListAdapter
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.Utils.SearchViewPagerAdapter
@@ -30,6 +27,7 @@ import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class ClubMyPageActivity : AppCompatActivity() {
     private val mContext: Context = this@ClubMyPageActivity
@@ -69,7 +67,10 @@ class ClubMyPageActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_club_my_page)
 
         // clubId 받아오기
-        clubId = 1
+        val intent = getIntent() /*데이터 수신*/
+//        clubId = 1
+        clubId = intent.extras!!.getLong("clubId")
+
 
         // 동아리 정보 불러오기
         getClub (clubId)

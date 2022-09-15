@@ -58,14 +58,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
                     android:layout_toRightOf="@+id/clubname"
                     android:background="@drawable/round"
                     android:backgroundTint="#F3F3F3"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="2dp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="1dp"
                     android:text="D-1"
                     android:textColor="#1E1E1E"
-                    android:textSize="12sp" />
+                    android:textSize="11sp" />
 
             </RelativeLayout>
 
