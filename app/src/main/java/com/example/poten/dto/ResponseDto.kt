@@ -15,6 +15,14 @@ data class PopularClubResponse (
     var post : String?= null,
 )
 
+data class SearchClubResponse (
+    var content: String? = null,
+    var clubname: String? = null,
+    var tag: String? = null,
+    var dday: String? = null,
+    var profile : String?= null,
+)
+
 
 data class BoardResponse (
     var boardId: Long? = null,

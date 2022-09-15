@@ -7,11 +7,11 @@
     <RelativeLayout
         android:id="@+id/relLayout1"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="110dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="90dp"
             android:layout_centerVertical="true"
             android:background="@drawable/rectangle_163"
             >
@@ -99,20 +99,24 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="110dp">
 
         <Button
             android:id="@+id/follow"
             android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/rectangle_177"
             android:text="팔로우" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/more"
             android:layout_width="160dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:text="더보기"
-            android:layout_marginRight="20dp"
+            android:textColor="@color/grey"
+            android:background="@drawable/rectangle_175"
+            android:layout_marginRight="5dp"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
