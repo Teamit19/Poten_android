@@ -12,7 +12,6 @@ import com.example.poten.Model.SearchNoticeItem
 import com.example.poten.R
 import com.example.poten.Utils.BottomNavigationViewHelper
 import com.example.poten.Utils.SearchFragment.ClubFragment
-import com.example.poten.Utils.SearchFragment.NoticeFragment2
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout

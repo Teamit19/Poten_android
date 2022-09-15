@@ -39,10 +39,11 @@
                 android:layout_height="41dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginBottom="1dp"
-                app:theme="@style/AppSearchView"
-                app:queryHint="나의 포텐을 터뜨릴 동아리는 어디?"
+                android:background="@drawable/rectangle_173"
+                android:fontFamily="@font/inter_medium"
                 app:iconifiedByDefault="false"
-                android:background="@drawable/rectangle_173"/>
+                app:queryHint="나의 포텐을 터뜨릴 동아리는 어디?"
+                app:theme="@style/AppSearchView" />
 
             <FrameLayout
                 android:id="@+id/fragment_view"
