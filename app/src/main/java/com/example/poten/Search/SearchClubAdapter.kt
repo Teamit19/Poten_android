@@ -1,6 +1,7 @@
 package com.example.poten.Search
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,15 @@ class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context
         layoutParams.height = 500
         holder.itemView.requestLayout()
 
+        holder.follow_btn.setOnClickListener(View.OnClickListener {
+            println("follow")
+            holder.follow_btn.setTextColor(Color.GRAY)
+            holder.follow_btn.setBackgroundResource(R.drawable.rectangle_174)
+        })
+
+        holder.more_btn.setOnClickListener(View.OnClickListener {
+            println("more")
+        })
     }
 
     override fun getItemCount(): Int {
