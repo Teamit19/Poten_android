@@ -84,6 +84,9 @@ data class BoardResponseList (
     val boardResponseList : List<BoardResponse>
 )
 
+data class ClubResponseList (
+    val clubResponseList : List<ClubResponse>
+)
 
 data class HeartBoardResponse (
     var heartId: Long? = null,

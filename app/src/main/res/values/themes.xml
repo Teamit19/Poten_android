@@ -41,4 +41,10 @@
         <item name="android:textSize">13sp</item>
     </style>
 
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorAccent">@color/red</item>
+    </style>
+
 </resources>
