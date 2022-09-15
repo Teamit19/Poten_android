@@ -67,6 +67,7 @@ class HomeActivity : AppCompatActivity() {
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.item_spinner)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
@@ -118,6 +119,13 @@ class HomeActivity : AppCompatActivity() {
         setupBottomNavigationView()
         setupToolbarView()
 
+    }
+
+    // activity 재실행시 데이터 갱신
+    override fun onRestart() {
+        super.onRestart()
+        adapter?.notifyDataSetChanged()
+        Log.i("ACTIVITY", "onRestart 호출됨")
     }
 
     // (스피너 기본 설정) 서버에서 모든 게시물 불러오기
