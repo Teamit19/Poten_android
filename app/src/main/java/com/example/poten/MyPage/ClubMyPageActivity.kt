@@ -26,6 +26,7 @@ import com.example.poten.Utils.SecondFragment.SecondFragment
 import com.example.poten.databinding.ActivityClubMyPageBinding
 import com.example.poten.interfaces.ClubApi
 import com.google.android.material.tabs.TabLayout
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -140,6 +141,14 @@ class ClubMyPageActivity : AppCompatActivity() {
         retrofit.getClub(clubId).enqueue(object : Callback<ClubResponse> {
             override fun onResponse(call: Call<ClubResponse>, response: Response<ClubResponse>) {
                 Log.i("CLUB", "getClub 성공" + response.body().toString())
+                Picasso.get()
+                    .load("http://172.30.1.3:8080/files/images/"+ response?.body()?.profile?.fileName)
+                    .into(binding.profilePhoto);
+
+//                Picasso.get()
+//                    .load("http://172.30.1.3:8080/files/images/"+ response?.body()?.background?.fileName)
+//                    .into(binding.appbar);
+
                 binding.tvOnoff.text = response?.body()?.activityType.toString()
                 binding.tvArea.text = response?.body()?.region.toString()
                 binding.clubname.text = response?.body()?.clubName
