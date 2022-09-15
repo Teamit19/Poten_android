@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".Search.SearchActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -53,15 +57,14 @@
                 android:layout_below="@+id/searchview" />
 
 
-        </RelativeLayout>
-        <!-- bottom navigation -->
-        <include layout="@layout/layout_bottom_navigation_view" />
-<!--            app:layout_constraintTop_toBottomOf="@+id/fragment_view"/>-->
-
     </RelativeLayout>
 
+    </RelativeLayout>
+        <!-- bottom navigation -->
+        <include layout="@layout/layout_bottom_navigation_view" />
 
 
+    </RelativeLayout>
 
 
 

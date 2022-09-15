@@ -20,6 +20,9 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context) : RecyclerView.Adapter <SearchClubAdapter.CustomViewHolder>() {
     private var c =  context
+    private var follow_cnt = 0
+    private var cnt: MutableList<Int> = MutableList(postList.size){0}
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -47,8 +50,17 @@ class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context
 
         holder.follow_btn.setOnClickListener(View.OnClickListener {
             println("follow")
-            holder.follow_btn.setTextColor(Color.GRAY)
-            holder.follow_btn.setBackgroundResource(R.drawable.rectangle_174)
+            if(cnt.get(position) == 0){
+                holder.follow_btn.setTextColor(Color.GRAY)
+                holder.follow_btn.setBackgroundResource(R.drawable.rectangle_174)
+                cnt[position] = 1
+            } else {
+                holder.follow_btn.setTextColor(Color.WHITE)
+                holder.follow_btn.setBackgroundResource(R.drawable.rectangle_177)
+                cnt[position] = 0
+            }
+
+
         })
 
         holder.more_btn.setOnClickListener(View.OnClickListener {

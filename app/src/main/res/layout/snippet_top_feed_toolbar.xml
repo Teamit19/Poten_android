@@ -17,28 +17,28 @@
 
                 <ImageView
                     android:id="@+id/banner_logo"
-                    android:layout_width="74dp"
+                    android:layout_width="105dp"
                     android:layout_height="40dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/poten_logo" />
+                    android:src="@drawable/ic_logo_final" />
 
                 <Spinner
                     android:id="@+id/spinnerDirectory"
-                    android:layout_width="64dp"
-                    android:layout_height="25dp"
+                    android:layout_width="63dp"
+                    android:layout_height="27dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="19dp"
                     android:layout_toLeftOf="@id/ivCloseShare"
                     android:background="@drawable/spinner_design"
-                    android:textColor="#525252"
-                    android:spinnerMode="dropdown"
                     android:popupBackground="@drawable/dropdown_background"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#525252"
                     android:textSize="1dp" />
 
                 <ImageView
                     android:id="@+id/ivCloseShare"
-                    android:layout_width="23dp"
+                    android:layout_width="24dp"
                     android:layout_height="25dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
