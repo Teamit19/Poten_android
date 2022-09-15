@@ -1,72 +1,83 @@
-package com.example.poten.Notice
+package com.example.poten.Search
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.Board.model.BoardResponse
+import com.example.poten.Board.model.PopularClubResponse
 import com.example.poten.Board.model.PosterResponse
+import com.example.poten.Model.SearchNoticeItem
 import com.example.poten.R
-import com.example.poten.Utils.SquareImageView
+import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
-class PosterAdapter(private val context: Context) : RecyclerView.Adapter<PosterAdapter.ViewHolder>() {
+class PosterAdapter(var postList : ArrayList<PosterResponse>, context: Context) : RecyclerView.Adapter <PosterAdapter.CustomViewHolder>() {
 
-    var datas= mutableListOf<PosterResponse>()
+    private var c =  context
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view= LayoutInflater.from(parent.context).inflate(R.layout.layout_card_notice, parent, false)
-        return ViewHolder(view)
+//    fun setListData(data:MutableList<BoardResponse>){
+//        postList = data
+//    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PosterAdapter.CustomViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_popular_club_listitem, parent,false)
+        return CustomViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: PosterAdapter.CustomViewHolder, position: Int) {
+        // 데이터 연결
+        holder.clubname.text = postList[position].club?.clubName
+        holder.tag.text="#"+postList[position].club?.field+" #"+postList[position].club?.activityType
+//        holder.tag2.text="#"+postList[position].club?.activityType
+        holder.dday.text="D-"+postList[position].dday
+        holder.subtitle.text = postList[position].content
+        var p1 = c.resources.getIdentifier("profile1","drawable", c.packageName)
+        var p2 = c.resources.getIdentifier("post1","drawable", c.packageName)
+
+
+        // 게시물 사진 연결
+        Picasso.get().load(p2).into(holder.post_images);
+        Picasso.get().load(p1).into(holder.profile_photo);
+
+
+        val layoutParams = holder.itemView.layoutParams
+        layoutParams.height = 250
+        holder.itemView.requestLayout()
 
     }
 
     override fun getItemCount(): Int {
-        return datas.size
+//        Log.i("BOARD", "getItemCount" + postList.size)
+        return postList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.clubname.text=datas[position].club?.clubName
-        holder.subtitle.text=datas[position].content
-        holder.dday.text="D-"+datas[position].dday
-        holder.tag.text="#"+datas[position].club?.field
-        holder.tag2.text="#"+datas[position].club?.activityType
-//        holder.relLayout1.setOnClickListener {
-//
-//        }
-        //        holder.tv_item_name.setOnClickListener {
-//            itemClickListener.onClick(it, position)
-//            it.setBackgroundResource(R.drawable.round_click)
-//            holder.tv_item_name.setTextColor(Color.WHITE)
-//        }
-    }
+    class CustomViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
 
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val clubname=itemView.findViewById<TextView>(R.id.clubname)
         val subtitle=itemView.findViewById<TextView>(R.id.subtitle)
         val dday=itemView.findViewById<TextView>(R.id.dday)
         val tag=itemView.findViewById<TextView>(R.id.tag)
-        val tag2=itemView.findViewById<TextView>(R.id.tag2)
-//        val profile_image=itemView.findViewById<CircleImageView>(R.id.profile_image)
-//        val post_image=itemView.findViewById<SquareImageView>(R.id.post_image)
-
+//        val tag2=itemView.findViewById<TextView>(R.id.tag2)
+        val profile_photo = itemView.findViewById<CircleImageView>(R.id.profile_image)
+        val post_images = itemView.findViewById<ImageView>(R.id.post_image)
 
     }
 
+
+    // (2) 리스너 인터페이스
     interface OnItemClickListener {
-        fun onClick(v: View, position: Int){
+        fun onClick(v: View, position: Int, b : PosterResponse){
+
         }
     }
     // (3) 외부에서 클릭 시 이벤트 설정
     fun setItemClickListener(onItemClickListener: OnItemClickListener) {
         this.itemClickListener = onItemClickListener
     }
-
     // (4) setItemClickListener로 설정한 함수 실행
     private lateinit var itemClickListener : OnItemClickListener
 
