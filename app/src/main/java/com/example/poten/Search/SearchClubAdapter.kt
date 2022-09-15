@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context) : RecyclerView.Adapter <SearchClubAdapter.CustomViewHolder>() {
     private var c =  context
     private var follow_cnt = 0
-    private var cnt: MutableList<Int> = MutableList(postList.size){0}
+    private var cnt: MutableList<Int> = MutableList(clubList.size){0}
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
