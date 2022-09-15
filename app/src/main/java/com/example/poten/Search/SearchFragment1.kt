@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.R
-import com.example.poten.Utils.SearchFragment.ClubFragment
-import com.example.poten.Utils.SearchFragment.NoticeFragment
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 

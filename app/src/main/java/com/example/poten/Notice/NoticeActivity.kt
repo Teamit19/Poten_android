@@ -8,30 +8,19 @@ import android.view.View
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.example.poten.Board.PostListViewAdapter
-import com.example.poten.Board.model.BoardResponse
-import com.example.poten.Board.model.BoardResponseList
 import com.example.poten.Board.model.PosterResponse
 import com.example.poten.Board.model.PosterResponseList
-import com.example.poten.Login.AreaAdapter
-import com.example.poten.Login.RecyclerViewDecoration
 import com.example.poten.R
+import com.example.poten.Search.PosterAdapter
 import com.example.poten.Utils.BottomNavigationViewHelper
-import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.RetrofitClient
 import com.example.poten.Utils.SearchViewPagerAdapter
-import com.example.poten.Utils.SecondFragment.SecondFragment
-import com.example.poten.databinding.ActivityLoginBinding
 import com.example.poten.databinding.ActivityNoticeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.poten.databinding.SnippetTopNoticeBinding
-import com.example.poten.interfaces.BoardApi
 import com.example.poten.interfaces.PosterApi
-import com.google.android.material.tabs.TabLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -121,12 +110,12 @@ class NoticeActivity : AppCompatActivity() {
                 cardAdapter.datas = postList
 
                 //어댑터 연결 - 공고 목록
-                posterAdapter= PosterAdapter(applicationContext)
-                binding.recycleViewDeadline.addItemDecoration(SpaceDecoration())
-                binding.recycleViewDeadline.adapter = posterAdapter
-                binding.recycleViewDeadline.layoutManager= LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
-
-                posterAdapter.datas = postList
+//                posterAdapter= PosterAdapter(applicationContext)
+//                binding.recycleViewDeadline.addItemDecoration(SpaceDecoration())
+//                binding.recycleViewDeadline.adapter = posterAdapter
+//                binding.recycleViewDeadline.layoutManager= LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
+//
+//                posterAdapter.datas = postList
 
 
             }
@@ -160,9 +149,9 @@ class NoticeActivity : AppCompatActivity() {
 
     private fun setupViewPager(viewPager: ViewPager){
         var adapter : SearchViewPagerAdapter = SearchViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(FirstFragment(), "전체")
-        adapter.addFragment(FirstFragment(), "온라인")
-        adapter.addFragment(FirstFragment(), "오프라인")
+        adapter.addFragment(PosterFragment(), "전체")
+        adapter.addFragment(PosterFragment(), "온라인")
+        adapter.addFragment(PosterFragment(), "오프라인")
 
 
         viewPager.adapter = adapter
