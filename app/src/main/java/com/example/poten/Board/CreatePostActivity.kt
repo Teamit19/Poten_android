@@ -3,6 +3,7 @@ package com.example.poten.Board
 import android.Manifest
 import android.content.ContentUris
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
@@ -20,6 +21,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.poten.Board.model.BoardResponse
@@ -99,6 +101,18 @@ class CreatePostActivity : AppCompatActivity() {
         retrofit.saveBoard(multipartBody, clubId, content).enqueue(object : Callback<BoardResponse> {
             override fun onResponse(call: Call<BoardResponse>, response: Response<BoardResponse>) {
                 Log.i("BOARD", "save board 성공"+ response.body().toString())
+                // 팝업창
+                val builder = AlertDialog.Builder(this@CreatePostActivity)
+                builder
+                    .setTitle("피드 업로드")
+                    .setMessage("피드 업로드가 완료되었습니다.")
+                    .setPositiveButton("확인",
+                        DialogInterface.OnClickListener { dialog, id ->
+                            // 확인 버튼 선택시 수행
+                            finish()
+                        })
+                builder.create()
+                builder.show()
             }
 
             override fun onFailure(call: Call<BoardResponse>, t: Throwable) {

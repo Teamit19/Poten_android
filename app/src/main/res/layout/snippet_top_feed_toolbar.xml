@@ -32,6 +32,8 @@
                     android:layout_toLeftOf="@id/ivCloseShare"
                     android:background="@drawable/spinner_design"
                     android:textColor="#525252"
+                    android:spinnerMode="dropdown"
+                    android:popupBackground="@drawable/dropdown_background"
                     android:textSize="1dp" />
 
                 <ImageView
