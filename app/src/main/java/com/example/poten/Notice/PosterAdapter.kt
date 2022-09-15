@@ -35,14 +35,17 @@ class PosterAdapter(var postList : ArrayList<PosterResponse>, context: Context) 
 //        holder.tag2.text="#"+postList[position].club?.activityType
         holder.dday.text="D-"+postList[position].dday
         holder.subtitle.text = postList[position].content
-        var p1 = c.resources.getIdentifier("profile1","drawable", c.packageName)
-        var p2 = c.resources.getIdentifier("post1","drawable", c.packageName)
-
 
         // 게시물 사진 연결
-        Picasso.get().load(p2).into(holder.post_images);
-        Picasso.get().load(p1).into(holder.profile_photo);
+        Picasso.get()
+            .load("http://172.30.1.3:8080/files/images/"+ postList[position].posterImg?.fileName)
+            .into(holder.post_images);
 
+        // 동아리 프로필 연결
+        Picasso.get()
+            .load("http://172.30.1.3:8080/files/images/"+ postList[position].club?.profile?.fileName)
+            .into(holder.profile_photo);
+        
 
         val layoutParams = holder.itemView.layoutParams
         layoutParams.height = 250

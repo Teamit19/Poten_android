@@ -47,7 +47,8 @@ data class ClubResponse (
     var members: List<UserResponse>? = null,
     var waitings: List<UserResponse>? = null,
     var createdTime: String? = null,
-
+    var profile : FileResponse ?= null,
+    var background : FileResponse ?= null,
     var  followersNum :Integer ?=null,
     var  heartsNum :Integer ?=null,
     var  membersNum :Integer ?=null,
@@ -97,7 +98,7 @@ data class PosterResponse (
     var title: String? = null,
     var content: String? = null,
     var deadlineDate: String? = null,
-    var pics : FileResponse ?= null,
+    var posterImg : FileResponse ?= null,
     var createdTime: String? = null,
     var modifiedTime: String? = null,
     var dday: Integer ? = null
