@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.Board.model.ClubResponse
 import com.example.poten.Model.memberList
+import com.example.poten.Notice.PosterFragment
 import com.example.poten.R
 import com.example.poten.Utils.FirstFragment.FirstFragment
 import com.example.poten.Utils.MemberListAdapter
@@ -77,7 +78,7 @@ class ClubMyPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_club_my_page)
+//        setContentView(R.layout.activity_club_my_page)
 
         // clubId 받아오기
         clubId = 1
@@ -198,7 +199,7 @@ class ClubMyPageActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putLong("clubId", clubId)
 
-        var fragment1 = FirstFragment()
+        var fragment1 = ClubPosterFragment()
         fragment1.arguments = bundle
 
         var fragment2 = SecondFragment()

@@ -396,10 +396,16 @@
                     android:id="@+id/tabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_scrollFlags="scroll"/>
+                    app:layout_scrollFlags="scroll"
+                    android:layout_marginHorizontal="20dp"
+                    app:tabIndicatorColor="#525252"
+                    android:textSize="16sp"
+                    app:tabSelectedTextColor="#525252"
+                    />
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/pager"
+                    android:layout_marginHorizontal="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
