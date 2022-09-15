@@ -1,7 +1,9 @@
 package com.example.poten.MyPage
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Point
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -110,8 +112,11 @@ class ClubMyPageActivity : AppCompatActivity() {
             binding.tvFollowing.text = binding.tvFollowing.text.toString().toInt().minus(1).toString()
         })
 
+
         btnVolunteer.setOnClickListener(View.OnClickListener {
             Log.d("지원하기", "지원하기 눌림")
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/rNreUdySBwCAcc5H6"))
+            startActivity(intent)
         })
 
 
