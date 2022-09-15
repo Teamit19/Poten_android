@@ -1,16 +1,19 @@
 package com.example.poten.Search
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poten.Board.model.ClubResponse
 import com.example.poten.Board.model.PopularClubResponse
 import com.example.poten.Board.model.SearchClubResponse
+import com.example.poten.MyPage.ClubMyPageActivity
 import com.example.poten.R
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
@@ -50,6 +53,13 @@ class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context
 
         holder.more_btn.setOnClickListener(View.OnClickListener {
             println("more")
+            val intent1 = Intent(it.context, ClubMyPageActivity::class.java) //ACTIVITY_NUM = 0
+            intent1.putExtra("clubId", clubList[position].clubId); /*송신*/
+
+            it.context.startActivity(intent1)
+
+
+
         })
     }
 
