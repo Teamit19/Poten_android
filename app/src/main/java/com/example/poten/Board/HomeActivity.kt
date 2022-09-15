@@ -1,12 +1,15 @@
 package com.example.poten.Board
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -230,6 +233,8 @@ class HomeActivity : AppCompatActivity() {
         val menu = bottomNavigationViewEx.menu
         val menuItem = menu.getItem(ACTIVITY_NUM)
         menuItem.isChecked = true
+        bottomNavigationViewEx.itemIconTintList = null
+
     }
 
 
