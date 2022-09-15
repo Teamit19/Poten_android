@@ -23,7 +23,7 @@ class PopularClubViewAdapter(var postList : ArrayList<PopularClubResponse>, cont
 //    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularClubViewAdapter.CustomViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_popular_club_listitem, parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_search_club_listitem, parent,false)
         return CustomViewHolder(view)
     }
 
@@ -34,11 +34,9 @@ class PopularClubViewAdapter(var postList : ArrayList<PopularClubResponse>, cont
         holder.dday.text = postList[position].dday
         holder.content.text = postList[position].content
         var p1 = c.resources.getIdentifier(postList[position].profile,"drawable", c.packageName)
-        var p2 = c.resources.getIdentifier(postList[position].post,"drawable", c.packageName)
 
 
         // 게시물 사진 연결
-        Picasso.get().load(p2).into(holder.post_images);
         Picasso.get().load(p1).into(holder.profile_photo);
 
 
@@ -58,7 +56,6 @@ class PopularClubViewAdapter(var postList : ArrayList<PopularClubResponse>, cont
         val tag = itemView.findViewById<TextView>(R.id.tag)
         val dday = itemView.findViewById<TextView>(R.id.dday)
         val profile_photo = itemView.findViewById<CircleImageView>(R.id.profile_image)
-        val post_images = itemView.findViewById<ImageView>(R.id.post_image)
         val content = itemView.findViewById<TextView>(R.id.subtitle)
 
 
