@@ -86,11 +86,15 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
+
                 <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true" />
+                    android:id="@+id/spinnerPoster"
+                    android:layout_width="64dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:textSize="10sp"
+                    android:background="@drawable/spinner_noline_design" />
+
             </RelativeLayout>
 
             <com.google.android.material.tabs.TabLayout
@@ -99,13 +103,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rel_layout_1"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
                 app:layout_scrollFlags="scroll"
                 app:tabIndicatorColor="#525252"
                 app:tabSelectedTextColor="#525252" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager"
+                android:layout_marginHorizontal="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tabs">

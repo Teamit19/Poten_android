@@ -72,6 +72,7 @@ class SelectKeywordActivity : AppCompatActivity() {
             }
 
         })
+
         binding.recyclerView.addItemDecoration(RecyclerViewDecoration(4))
         binding.recyclerView.adapter = areaAdapter
         binding.recyclerView.layoutManager= GridLayoutManager(applicationContext, 4)
@@ -94,18 +95,17 @@ class SelectKeywordActivity : AppCompatActivity() {
 
         with(datas) {
             add("IT")
-            add("요리")
             add("크리에이터")
-            add("연기")
+            add("요리")
+            add("디자인")
+            add("프로그래밍")
             add("독서")
             add("스포츠")
-            add("프로그래밍")
-            add("디자인")
+            add("베이킹")
             add("발표")
-            add("베이킹 수업")
             add("자연과학")
-            add("봉사활동")
             add("연출")
+            add("봉사활동")
             add("글쓰기")
             add("언어")
             add("댄스")
@@ -113,10 +113,10 @@ class SelectKeywordActivity : AppCompatActivity() {
             add("전시회")
             add("달리기")
             add("요가")
-            add("기획")
+            add("영어회화")
             add("역사")
             add("스피치")
-            add("영어회화")
+            add("기획")
             add("수영")
             add("클라이밍")
             add("힙합")
@@ -125,9 +125,9 @@ class SelectKeywordActivity : AppCompatActivity() {
             add("영화")
             add("수학")
             add("밴드")
-            add("자유토론")
-            add("악기")
-            add("광고")
+//            add("자유토론")
+//            add("악기")
+//            add("광고")
 
 
 

@@ -68,6 +68,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/input_background"
             android:enabled="false"
+            android:fontFamily="@font/inter_medium"
             android:hint="이메일 입력"
             android:inputType="textEmailAddress"
             android:textColor="#ACACAC"
@@ -91,12 +92,13 @@
             android:layout_height="41dp"
             android:layout_below="@id/text5"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_medium"
             android:background="@drawable/input_background"
             android:hint="닉네임 입력"
-            android:textStyle="bold"
             android:inputType="text"
             android:textColor="#2B2B2B"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

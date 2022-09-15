@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.poten.R
 import com.example.poten.Utils.SearchFragment.ClubFragment
-import com.example.poten.Utils.SearchFragment.NoticeFragment
 import com.example.poten.Utils.SearchViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
@@ -38,7 +37,7 @@ class SearchFragment2 : Fragment() {
 
     fun setupViewPager(viewPager: ViewPager){
         var adapter : SearchViewPagerAdapter = SearchViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(NoticeFragment(), "공고")
+        adapter.addFragment(NoticeFragment2(), "공고")
         adapter.addFragment(ClubFragment(), "동아리")
 
         viewPager.adapter = adapter

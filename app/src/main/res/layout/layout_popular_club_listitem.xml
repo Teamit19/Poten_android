@@ -14,9 +14,7 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="2dp"
-            android:src="@drawable/ic_launcher_background"
-            app:civ_border_color="@color/black"
-            app:civ_border_width="0.5dp" />
+            android:src="@drawable/ic_launcher_background" />
 
         <RelativeLayout
             android:id="@+id/rel_layout"
@@ -32,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="#경기도 #온라인"
-                android:textSize="12sp" />
+                android:textColor="#ACACAC"
+                android:textSize="11sp" />
 
             <RelativeLayout
                 android:id="@+id/rel_layout2"
@@ -51,8 +50,8 @@
                     android:fontFamily="@font/inter_bold"
                     android:maxLines="1"
                     android:text="한사랑 클라이밍회"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textColor="#2B2B2B"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/dday"
@@ -62,11 +61,11 @@
                     android:layout_toRightOf="@+id/clubname"
                     android:background="@drawable/round"
                     android:backgroundTint="#F3F3F3"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="3dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
                     android:text="D-1"
                     android:textColor="#1E1E1E"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 
@@ -81,7 +80,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="한사랑 클라이밍회 부원 모집합니다.가나다라마바사"
-                android:textColor="@color/black"
+                android:textColor="#494949"
                 android:textSize="12sp" />
 
 

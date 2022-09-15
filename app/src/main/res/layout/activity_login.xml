@@ -7,30 +7,48 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="75.61dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:gravity="bottom"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_fire_logo" />
+
+
     <RelativeLayout
         android:id="@+id/relLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp">
+        android:layout_below="@id/imgBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp">
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="반가워요"
-            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text="반가워요,"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text1"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
             android:text="포텐"
-            android:textStyle="bold"
             android:textColor="#F32323"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text3"
@@ -38,62 +56,67 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text1"
             android:layout_toRightOf="@id/text2"
-            android:textStyle="bold"
+            android:fontFamily="@font/inter_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
             android:text=" 터질 준비 됐나요?"
             android:textColor="@color/black"
             android:textSize="30sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/relLayout2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/relLayout1"
-        android:layout_marginVertical="20dp">
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="40dp"
 
-        <!--        <androidx.appcompat.widget.AppCompatButton-->
-        <!--            android:id="@+id/btn_login"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="25dp"-->
-        <!--            android:layout_marginBottom="25dp"-->
-        <!--            android:background="@drawable/black_rounded_button"-->
-        <!--            android:padding="12dp"-->
-        <!--            android:text="카카오톡 간편 로그인"-->
-        <!--            android:textColor="@color/white" />-->
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/black_rounded_button"
-            android:padding="12dp">
+        android:background="@drawable/black_rounded_button">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="카카오톡 간편 로그인"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="카카오톡 간편 로그인"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="21.41dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="81dp"
-                android:src="@drawable/ic_kakao"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="21.41dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="76dp"
+            android:src="@drawable/ic_kakao"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </RelativeLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relLayout2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/relLayout1">-->
+
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:id="@+id/btn_login"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="25dp"-->
+<!--                    android:layout_marginBottom="25dp"-->
+<!--                    android:background="@drawable/black_rounded_button"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:text="카카오톡 간편 로그인"-->
+<!--                    android:textColor="@color/white" />-->
+
+
+
+<!--    </RelativeLayout>-->
 
 </RelativeLayout>
