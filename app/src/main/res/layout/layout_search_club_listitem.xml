@@ -101,11 +101,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="110dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/follow"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
             android:background="@drawable/rectangle_177"
             android:text="팔로우" />
 

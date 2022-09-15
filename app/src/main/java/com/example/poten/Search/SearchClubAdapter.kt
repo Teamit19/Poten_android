@@ -53,6 +53,8 @@ class SearchClubAdapter(var postList : ArrayList<PopularClubResponse>, context: 
         val dday = itemView.findViewById<TextView>(R.id.dday)
         val profile_photo = itemView.findViewById<CircleImageView>(R.id.profile_image)
         val content = itemView.findViewById<TextView>(R.id.subtitle)
+        val follow_btn = itemView.findViewById<TextView>(R.id.follow)
+        val more_btn = itemView.findViewById<TextView>(R.id.more)
 
 
     }

@@ -17,8 +17,7 @@ class SearchClubFragment : Fragment() {
     private lateinit var mContext: Context
     private var recyclerView: RecyclerView? = null
     private lateinit var adapter: SearchClubAdapter
-    private lateinit var follow_btn: Button
-    private lateinit var more_btn: Button
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +26,7 @@ class SearchClubFragment : Fragment() {
     ): View? {
         var v: View = inflater.inflate(R.layout.fragment_poster, container, false)
         recyclerView = v.findViewById(R.id.recyclerView) as RecyclerView
-        follow_btn = v.findViewById(R.id.follow)
-        more_btn = v.findViewById(R.id.more)
+
         val layoutManger = LinearLayoutManager(activity)
         recyclerView!!.layoutManager = layoutManger
         //recyclerView!!.addItemDecoration(DividerItemDecoration(recyclerView!!.context, layoutManger.orientation))
