@@ -40,6 +40,13 @@ class SearchClubAdapter(var postList : ArrayList<PopularClubResponse>, context: 
         layoutParams.height = 500
         holder.itemView.requestLayout()
 
+        holder.follow_btn.setOnClickListener(View.OnClickListener {
+            println("fp")
+        })
+
+        holder.more_btn.setOnClickListener(View.OnClickListener {
+            println("fp")
+        })
     }
 
     override fun getItemCount(): Int {
