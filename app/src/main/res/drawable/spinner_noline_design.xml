@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+
+            <item
+                android:drawable="@drawable/ic_spinner_check"
+                android:gravity="center|end"
+                android:width="12dp"
+                android:height="6dp">
+            </item>
+        </layer-list>
+    </item>
+</selector>
