@@ -1,5 +1,19 @@
 package com.example.poten.Board.model
 
+import android.widget.ImageView
+import android.widget.TextView
+import com.example.poten.R
+import de.hdodenhof.circleimageview.CircleImageView
+
+
+data class PopularClubResponse (
+    var content: String? = null,
+    var clubname: String? = null,
+    var tag: String? = null,
+    var dday: String? = null,
+    var profile : String?= null,
+    var post : String?= null,
+)
 
 
 data class BoardResponse (
