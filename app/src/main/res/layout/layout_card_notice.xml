@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="12dp"
-            android:paddingVertical="5dp"
+            android:paddingVertical="3dp"
             android:background="#616161">
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:text="해피봉사"
                 android:textColor="#2B2B2B"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -83,7 +83,7 @@
                 android:maxLines="2"
                 android:text="해피봉사 정규 모집!\n도움의 손길이 필요합니다\n안녕하세요."
                 android:textColor="#494949"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
         </RelativeLayout>
 
     </LinearLayout>

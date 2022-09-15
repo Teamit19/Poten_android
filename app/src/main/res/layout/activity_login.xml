@@ -9,29 +9,30 @@
 
     <ImageView
         android:id="@+id/imgBackground"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="192dp"
         android:layout_width="75.61dp"
         android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
         android:gravity="bottom"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_fire_logo" />
 
 
-
     <RelativeLayout
         android:id="@+id/relLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imgBackground"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="80dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp">
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
             android:text="반가워요,"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -42,8 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text1"
-            android:layout_marginLeft="10dp"
-            android:text="포텐 "
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text="포텐"
             android:textColor="#F32323"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -54,10 +56,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text1"
             android:layout_toRightOf="@id/text2"
-            android:text="터질 준비 됐나요?"
+            android:fontFamily="@font/inter_bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="-0.03"
+            android:text=" 터질 준비 됐나요?"
             android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,9 +69,10 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="25dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/black_rounded_button"
-        android:padding="12dp">
+
+        android:background="@drawable/black_rounded_button">
 
 
         <TextView
@@ -76,6 +81,7 @@
             android:layout_marginStart="16dp"
             android:text="카카오톡 간편 로그인"
             android:textColor="@color/white"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
@@ -84,7 +90,7 @@
             android:id="@+id/imageView"
             android:layout_width="21.41dp"
             android:layout_height="20dp"
-            android:layout_marginStart="81dp"
+            android:layout_marginStart="76dp"
             android:src="@drawable/ic_kakao"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
