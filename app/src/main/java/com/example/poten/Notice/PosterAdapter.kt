@@ -41,7 +41,7 @@ class PosterAdapter(var postList : ArrayList<PosterResponse>, context: Context) 
         if (postList[position].dday!!.toInt() <= 0) {
             holder.dday.text="마감"
         }
-        holder.subtitle.text = postList[position].content
+        holder.subtitle.text = postList[position].title
         // 게시물 사진 연결
         Picasso.get()
             .load("http://172.30.1.3:8080/files/images/"+ postList[position].posterImg?.fileName)
