@@ -38,7 +38,7 @@ class SearchFragment2 : Fragment() {
     fun setupViewPager(viewPager: ViewPager){
         var adapter : SearchViewPagerAdapter = SearchViewPagerAdapter(requireActivity().supportFragmentManager)
         adapter.addFragment(NoticeFragment2(), "공고")
-        adapter.addFragment(ClubFragment(), "동아리")
+        adapter.addFragment(SearchClubFragment(), "동아리")
 
         viewPager.adapter = adapter
     }
