@@ -33,6 +33,9 @@ class CardAdapter(private val context: Context) : RecyclerView.Adapter<CardAdapt
         holder.tv_dday.text="D-"+datas[position].dday
         holder.tv_hashtag.text="#"+datas[position].club?.region
         holder.tv_hashtag2.text="#"+datas[position].club?.activityType
+        if (datas[position].dday!!.toInt() == 1) {
+            holder.relLayout1.setBackgroundColor(Color.parseColor("#FF6363"))
+        }
 //        holder.relLayout1.setOnClickListener {
 //
 //        }

@@ -37,11 +37,13 @@ class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context
         holder.tag.text= "#"+clubList[position].region+" #"+clubList[position].activityType
         holder.content.text = clubList[position].clubDesc
 //        var p1 = c.resources.getIdentifier(clubList[position].profile?.fileName,"drawable", c.packageName)
-        var p1 = c.resources.getIdentifier("profile1","drawable", c.packageName)
+//        var p1 = c.resources.getIdentifier("profile1","drawable", c.packageName)
 
-
+        Picasso.get()
+            .load("http://172.30.1.3:8080/files/images/"+ clubList[position].profile?.fileName)
+            .into(holder.profile_photo);
         // 게시물 사진 연결
-        Picasso.get().load(p1).into(holder.profile_photo);
+//        Picasso.get().load(p1).into(holder.profile_photo);
 
 
         val layoutParams = holder.itemView.layoutParams

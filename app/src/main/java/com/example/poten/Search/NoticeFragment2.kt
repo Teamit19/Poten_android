@@ -23,8 +23,8 @@ class NoticeFragment2 : Fragment() {
     private lateinit var mContext: Context
     private var recyclerView: RecyclerView? = null
     private lateinit var adapter: PosterAdapter
-    var retrofit = RetrofitClient.create(PosterApi::class.java)
     private val postList =  ArrayList<PosterResponse>()
+    private lateinit var keyword:String
 
 
     override fun onCreateView(
@@ -35,6 +35,10 @@ class NoticeFragment2 : Fragment() {
         var v: View = inflater.inflate(R.layout.fragment_poster, container, false)
 
         recyclerView = v.findViewById(R.id.recyclerView) as RecyclerView
+
+        arguments?.let {
+            keyword = it.getString("keyword").toString()
+        }
 
         val layoutManger = LinearLayoutManager(activity)
         recyclerView!!.layoutManager = layoutManger
@@ -51,7 +55,7 @@ class NoticeFragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getPosterAll()
+        getSearchPoster(keyword)
 
 
 //        postList.add(PopularClubResponse("한사랑클라이밍회 부원 모집하는중인...", "한사랑 클라이밍회", "#서울 #오프라인", "D-6", "profile1", "post1"))
@@ -65,10 +69,15 @@ class NoticeFragment2 : Fragment() {
 
     }
 
-    private fun getPosterAll() {
-        retrofit.getPosterAll().enqueue(object : Callback<PosterResponseList> {
+    private fun getSearchPoster(keyword : String) {
+        var hashMap=HashMap<String, String>()
+        hashMap.put("keyword", keyword)
+        Log.i("Club", "poster 성공"+ keyword)
+        var retrofit = RetrofitClient.create(PosterApi::class.java, RetrofitClient.getAuth())
+
+        retrofit.searchPoster(hashMap).enqueue(object : Callback<PosterResponseList> {
             override fun onResponse(call: Call<PosterResponseList>, response: Response<PosterResponseList>) {
-                Log.i("Poster", "getPosterAll 성공"+ response.body().toString())
+                Log.i("Poster", "searchPoster 성공"+ response.body().toString())
 
                 postList.clear() // 비우기
                 response.body()?.posterResponseList?.let { it -> postList.addAll(it) }
@@ -82,7 +91,7 @@ class NoticeFragment2 : Fragment() {
             }
 
             override fun onFailure(call: Call<PosterResponseList>, t: Throwable) {
-                Log.e("Poster", "getPosterAll 실패"+t.message.toString())
+                Log.e("Poster", "searchPoster 실패"+t.message.toString())
             }
         })
     }

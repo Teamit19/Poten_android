@@ -1,6 +1,7 @@
 package com.example.poten.Search
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,8 +35,13 @@ class PosterAdapter(var postList : ArrayList<PosterResponse>, context: Context) 
         holder.tag.text="#"+postList[position].club?.field+" #"+postList[position].club?.activityType
 //        holder.tag2.text="#"+postList[position].club?.activityType
         holder.dday.text="D-"+postList[position].dday
+//        if (postList[position].dday!!.toInt() == 1) {
+//            holder.dday.setBackgroundResource(R.drawable.round_red)
+//        }else
+        if (postList[position].dday!!.toInt() <= 0) {
+            holder.dday.text="마감"
+        }
         holder.subtitle.text = postList[position].content
-
         // 게시물 사진 연결
         Picasso.get()
             .load("http://172.30.1.3:8080/files/images/"+ postList[position].posterImg?.fileName)
@@ -67,6 +73,7 @@ class PosterAdapter(var postList : ArrayList<PosterResponse>, context: Context) 
 //        val tag2=itemView.findViewById<TextView>(R.id.tag2)
         val profile_photo = itemView.findViewById<CircleImageView>(R.id.profile_image)
         val post_images = itemView.findViewById<ImageView>(R.id.post_image)
+
 
     }
 

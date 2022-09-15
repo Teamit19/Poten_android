@@ -38,13 +38,15 @@ class SearchFragment2 : Fragment() {
     fun setupViewPager(viewPager: ViewPager){
         val bundle = Bundle()
         bundle.putString("keyword", result)
+        var fragment1 = NoticeFragment2()
+        fragment1.arguments = bundle
 
         var fragment2 = SearchClubFragment()
         fragment2.arguments = bundle
 
 
         var adapter : SearchViewPagerAdapter = SearchViewPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(NoticeFragment2(), "공고")
+        adapter.addFragment(fragment1, "공고")
         adapter.addFragment(fragment2, "동아리")
 
         viewPager.adapter = adapter
