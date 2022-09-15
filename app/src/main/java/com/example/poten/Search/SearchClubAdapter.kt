@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.poten.Board.model.ClubResponse
 import com.example.poten.Board.model.PopularClubResponse
 import com.example.poten.Board.model.SearchClubResponse
 import com.example.poten.R
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
-class SearchClubAdapter(var postList : ArrayList<PopularClubResponse>, context: Context) : RecyclerView.Adapter <SearchClubAdapter.CustomViewHolder>() {
+class SearchClubAdapter(var clubList : ArrayList<ClubResponse>, context: Context) : RecyclerView.Adapter <SearchClubAdapter.CustomViewHolder>() {
     private var c =  context
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -25,11 +26,11 @@ class SearchClubAdapter(var postList : ArrayList<PopularClubResponse>, context: 
 
     override fun onBindViewHolder(holder: SearchClubAdapter.CustomViewHolder, position: Int) {
         // 데이터 연결
-        holder.clubname.text = postList[position].clubname
-        holder.tag.text= postList[position].tag
-        holder.dday.text = postList[position].dday
-        holder.content.text = postList[position].content
-        var p1 = c.resources.getIdentifier(postList[position].profile,"drawable", c.packageName)
+        holder.clubname.text = clubList[position].clubName
+        holder.tag.text= "#"+clubList[position].region+" #"+clubList[position].activityType
+        holder.content.text = clubList[position].clubDesc
+//        var p1 = c.resources.getIdentifier(clubList[position].profile?.fileName,"drawable", c.packageName)
+        var p1 = c.resources.getIdentifier("profile1","drawable", c.packageName)
 
 
         // 게시물 사진 연결
@@ -43,14 +44,13 @@ class SearchClubAdapter(var postList : ArrayList<PopularClubResponse>, context: 
     }
 
     override fun getItemCount(): Int {
-//        Log.i("BOARD", "getItemCount" + postList.size)
-        return postList.size
+//        Log.i("BOARD", "getItemCount" + clubList.size)
+        return clubList.size
     }
 
     class CustomViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
         val clubname = itemView.findViewById<TextView>(R.id.clubname) //동아리 이름
         val tag = itemView.findViewById<TextView>(R.id.tag)
-        val dday = itemView.findViewById<TextView>(R.id.dday)
         val profile_photo = itemView.findViewById<CircleImageView>(R.id.profile_image)
         val content = itemView.findViewById<TextView>(R.id.subtitle)
         val follow_btn = itemView.findViewById<TextView>(R.id.follow)
