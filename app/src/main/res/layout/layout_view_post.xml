@@ -27,7 +27,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="23dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/image_profile_test"
+                android:src="@drawable/ic_account_circle02"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="0dp" />
 
@@ -101,7 +101,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/post_image"
-            android:layout_width="wrap_content"
+            android:layout_width="800dp"
             android:layout_height="353dp"
             android:layout_below="@+id/border"
             android:layout_marginLeft="22dp"

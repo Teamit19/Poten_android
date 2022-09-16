@@ -83,6 +83,8 @@ class CreatePostActivity : AppCompatActivity() {
             val clubName = et_postClubName.text.toString()
             val clubId = 1L;
 
+            Log.i("CREATEBOARD", "edittext : "+ content)
+
             // 파일 처리
             val file = File(getRealPathFromURI(this.applicationContext, uploadPicUri))
             var fileName = file.name
@@ -97,6 +99,8 @@ class CreatePostActivity : AppCompatActivity() {
 //    private fun saveBoard(multipartBody : MultipartBody.Part, request: BoardForm) {
     private fun saveBoard(multipartBody : MultipartBody.Part, clubId:Long, content:String) {
         var retrofit = RetrofitClient.create(BoardApi::class.java,RetrofitClient.getAuth())
+
+        Log.i("CREATEBOARD", "saveBoard : "+ content)
 
         retrofit.saveBoard(multipartBody, clubId, content).enqueue(object : Callback<BoardResponse> {
             override fun onResponse(call: Call<BoardResponse>, response: Response<BoardResponse>) {
